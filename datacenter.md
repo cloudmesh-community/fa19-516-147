@@ -15,6 +15,8 @@ My Carbon footprint is 11266 lbs
 
 ## E.Datacenter.4
 
+Solar Energy
+
 Renewal energy is the alternate form of  energy which is from natural sources and filled up naturally e.g Solar Energy. 
 Solar energy is light and heat from the sun which is naturally available .
 Solar energy is converted to electricity using solar panels which are installed in the open places where they can receive direct sunlight . 
@@ -25,12 +27,14 @@ One example of data center which use Solar renewable enery is Apple Data center 
 
 ### References 
 
-https://en.wikipedia.org/wiki/Solar_energy/
+https://en.wikipedia.org/wiki/Solar_energy
 https://news.energysage.com/solar-panels-work/
 https://fortune.com/2012/09/15/aerial-photo-apples-massive-solar-farm-in-maiden-n-c/
 
 
 ## E.Datacenter.5
+
+North Carolina State
 
 North  Carolina renewal energy consumption is growing fast , as per Arcadia Power blog on North Carolina Renewable energy “In 2015, approximately 7% of North Carolina’s energy mix came from renewable sources such as hydroelectric, biomass, and solar. Though mainly producing hydroelectric energy, North Carolina ranks 3rd in the country in installed solar capacity.” This blog further stated that :North Carolina has already installed over 2,436 MW of solar energy, and is expected to more than double its capacity over the next 5 years by adding 3,656 MW of solar electric capacity. Wind power, on the other hand, just recently took off. In 2015, North Carolina started construction on the state’s first commercial-scale wind farm, which will be the largest wind farm in the Southeast to date.”
 
