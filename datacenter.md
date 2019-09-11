@@ -6,9 +6,9 @@
 
 Data Center : Volkswagen
 
-YearBuild : 2019
-
 Location : Rjukan , Norway
+
+Year Build : 2019
 
 IT load ($/kW): 2750
 
@@ -25,7 +25,7 @@ Equivalent in car : 0
 
 ## E.Datacenter.2b
 
-Detail has been entered in the link given:
+Detail availble online has been entered in the link given:
 
 <https://docs.google.com/spreadsheets/d/1gh869zfjA4sVxL8-ga0af2_HLTTuOoD1IReuRSrbq4I/edit#gid=0>
 
