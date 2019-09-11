@@ -15,15 +15,15 @@ Yearly CO2 Foot Print : 5,800
 Equivalent in car : 1000
 
 ### References: 
-https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html
-https://www.cnet.com/roadshow/news/volkswagen-carbon-neutral-data-center-norway/
+<https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html>
+<https://www.cnet.com/roadshow/news/volkswagen-carbon-neutral-data-center-norway/>
 
 
 ## E.Datacenter.2b
 
 Detail has been entered in the link given:
 
-https://docs.google.com/spreadsheets/d/1gh869zfjA4sVxL8-ga0af2_HLTTuOoD1IReuRSrbq4I/edit#gid=0
+<https://docs.google.com/spreadsheets/d/1gh869zfjA4sVxL8-ga0af2_HLTTuOoD1IReuRSrbq4I/edit#gid=0>
 
 ## E.Datacenter.3
 
@@ -43,9 +43,9 @@ One example of data center which use Solar renewable enery is Apple Data center 
 
 ### References 
 
-https://en.wikipedia.org/wiki/Solar_energy
-https://news.energysage.com/solar-panels-work/
-https://fortune.com/2012/09/15/aerial-photo-apples-massive-solar-farm-in-maiden-n-c/
+<https://en.wikipedia.org/wiki/Solar_energy>
+<https://news.energysage.com/solar-panels-work/>
+<https://fortune.com/2012/09/15/aerial-photo-apples-massive-solar-farm-in-maiden-n-c/>
 
 
 ## E.Datacenter.5
@@ -58,8 +58,8 @@ North Carolina state’s energy conservation efforts has helped state rank 2nd p
 
 ### Refrerances 
 
-https://www.eia.gov/state/?sid=NC
-https://blog.arcadiapower.com/north-carolina-renewable-energy/
+<https://www.eia.gov/state/?sid=NC>
+<https://blog.arcadiapower.com/north-carolina-renewable-energy/>
 
 
 ## E.Datacenter.8
@@ -73,7 +73,7 @@ This outage remained for three hours and had impact across the Maxico where cust
 Details of revenue impact and customer count of this outage is not available online .  
 
 ### References 
-https://www.datacenterdynamics.com/news/banking-services-across-mexico-go-down-due-prosa-data-center-outage/
-https://techerati.com/news-hub/data-centre-outage-mexico-banks-banking-prosa/
+<https://www.datacenterdynamics.com/news/banking-services-across-mexico-go-down-due-prosa-data-center-outage/>
+<https://techerati.com/news-hub/data-centre-outage-mexico-banks-banking-prosa/>
 
 
