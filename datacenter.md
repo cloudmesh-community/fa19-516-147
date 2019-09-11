@@ -6,13 +6,17 @@
 
 Data Center : Volkswagen
 
+YearBuild : 2019
+
 Location : Rjukan , Norway
 
 IT load ($/kW): 2750
 
-Yearly CO2 Foot Print : 5,800
+Yearly CO2 Foot Print : 0 
 
-Equivalent in car : 1000
+As per volkswagenag.com news( Rjukan/Wolfsburg, 2019-06-18), this data center is "100 percent powered by hydropower – resulting in a savings of more than 5,800 tons of CO2 per year"
+
+Equivalent in car : 0
 
 ### References: 
 <https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html>
