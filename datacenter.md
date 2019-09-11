@@ -4,10 +4,26 @@
 
 ## E.Datacenter.2a
 
+Data Center : Volkswagen
+
+Location : Rjukan , Norway
+
+IT load ($/kW): 2750
+
+Yearly CO2 Foot Print : 5,800
+
+Equivalent in car : 1000
+
+### References: 
+https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html
+https://www.cnet.com/roadshow/news/volkswagen-carbon-neutral-data-center-norway/
 
 
 ## E.Datacenter.2b
 
+Detail has been entered in the link given:
+
+https://docs.google.com/spreadsheets/d/1gh869zfjA4sVxL8-ga0af2_HLTTuOoD1IReuRSrbq4I/edit#gid=0
 
 ## E.Datacenter.3
 
