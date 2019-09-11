@@ -4,7 +4,7 @@
 
 ## E.Datacenter.2a
 
-My super duper content
+
 
 ## E.Datacenter.2b
 
