@@ -1,7 +1,5 @@
 # Datacenter fa19-516-147
 
-:o2: fix urls
-
 ## E.Datacenter.2a
 
 Data Center : Volkswagen
@@ -25,9 +23,7 @@ Equivalent in car : 0
 
 ## E.Datacenter.2b
 
-Detail available online has been entered in the link given:
-
-<https://docs.google.com/spreadsheets/d/1gh869zfjA4sVxL8-ga0af2_HLTTuOoD1IReuRSrbq4I/edit#gid=0>
+Data available online has been entered in this [file](<https://docs.google.com/spreadsheets/d/1gh869zfjA4sVxL8-ga0af2_HLTTuOoD1IReuRSrbq4I/edit#gid=0>) .
 
 ## E.Datacenter.3
 
@@ -43,7 +39,7 @@ Solar energy is converted to electricity using solar panels which are installed 
 Photovoltaic cells in the solar panel absorbs sunlight and create direct current (DC) which again gets converted to alternate current (AC).
 Two most common way of installing solar panels to generate solar energy are Solar Rooftop and Solar Farms. In Solar rooftop solution  ,solar panels are installed on top of the house/building where direct sun light can be received while Solar farms are the open space of land where Solar panels are installed.
 
-An example of data center which uses Solar renewable energy is Apple data center in Maiden NC. 
+An example of data center with Solar renewable energy is Apple data center in Maiden NC. 
 
 ### References 
 
@@ -71,7 +67,7 @@ North Carolina's energy conservation efforts have helped state rank 2nd position
 Prosa, Santa Fe, Mexico data center outage
 
 August 2019 , there was a data center outage in Mexico which caused entire banking system to halt ,impacting several customers.
-The data center outage happened at Prosa, Santa Fe, Mexico. Prosa is  an electronic transaction services firm which process Credit/Debit card payments in Mexico. Major banking systems of the country use this electronic payment service . The services were interrupted when an electrical fault in data center caused outage and shut off making any payment , purchase or ATM uses.
+The data center outage happened at Prosa, Santa Fe, Mexico. Prosa is  an electronic transaction services firm which process Credit/Debit card payments in Mexico. Major banking systems of the country use this electronic payment service . The services were interrupted when an electrical fault in data center caused outage and shut off making any payment , purchase or ATM use.
 This outage remained for three hours and had impact across the Mexico where customers of major banks and supermarket were not able to make payment during the rush hours of weekend. 
 
 Details of revenue impact and customer count of this outage are not available online .  
