@@ -4,23 +4,19 @@
 
 ## E.Datacenter.2a
 
-Data Center : Volkswagen
-
-Location : Rjukan , Norway
-
-Year Build : 2019
-
-IT load ($/kW): 2750
-
-Yearly CO2 Foot Print : 0 
+* Data Center : Volkswagen
+* Location : Rjukan , Norway
+* Year Build : 2019
+* IT load ($/kW): 2750
+* Yearly CO2 Foot Print : 0 
 
 As per volkswagenag.com news( Rjukan/Wolfsburg, 2019-06-18), this data center is "100 percent powered by hydropower – resulting in a savings of more than 5,800 tons of CO2 per year"
 
-Equivalent in car : 0
+* Equivalent in car : 0
 
 ### References: 
-<https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html>
-<https://www.cnet.com/roadshow/news/volkswagen-carbon-neutral-data-center-norway/>
+1. <https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html>
+1. <https://www.cnet.com/roadshow/news/volkswagen-carbon-neutral-data-center-norway/>
 
 
 ## E.Datacenter.2b
@@ -45,9 +41,9 @@ An example of data center with Solar renewable energy is Apple data center in Ma
 
 ### References 
 
-<https://en.wikipedia.org/wiki/Solar_energy>
-<https://news.energysage.com/solar-panels-work/>
-<https://fortune.com/2012/09/15/aerial-photo-apples-massive-solar-farm-in-maiden-n-c/>
+1. <https://en.wikipedia.org/wiki/Solar_energy>
+1. <https://news.energysage.com/solar-panels-work/>
+1. <https://fortune.com/2012/09/15/aerial-photo-apples-massive-solar-farm-in-maiden-n-c/>
 
 
 ## E.Datacenter.5
@@ -60,8 +56,8 @@ North Carolina's energy conservation efforts have helped state rank 2nd position
 
 ### References 
 
-<https://www.eia.gov/state/?sid=NC>
-<https://blog.arcadiapower.com/north-carolina-renewable-energy/>
+1. <https://www.eia.gov/state/?sid=NC>
+1. <https://blog.arcadiapower.com/north-carolina-renewable-energy/>
 
 
 ## E.Datacenter.8
@@ -75,7 +71,7 @@ This outage remained for three hours and had impact across the Mexico where cust
 Details of revenue impact and customer count of this outage are not available online .  
 
 ### References 
-<https://www.datacenterdynamics.com/news/banking-services-across-mexico-go-down-due-prosa-data-center-outage/>
-<https://techerati.com/news-hub/data-centre-outage-mexico-banks-banking-prosa/>
+1. <https://www.datacenterdynamics.com/news/banking-services-across-mexico-go-down-due-prosa-data-center-outage/>
+1. <https://techerati.com/news-hub/data-centre-outage-mexico-banks-banking-prosa/>
 
 
