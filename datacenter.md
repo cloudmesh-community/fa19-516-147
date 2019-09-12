@@ -1,5 +1,7 @@
 # Datacenter fa19-516-147
 
+:o2: please use proper lists
+
 ## E.Datacenter.2a
 
 Data Center : Volkswagen
