@@ -1,23 +1,22 @@
 # Datacenter fa19-516-147
 
-:o2: please use proper lists
-
 ## E.Datacenter.2a
+
+Carbon footprint of a data center
 
 * Data Center : Volkswagen
 * Location : Rjukan , Norway
 * Year Build : 2019
 * IT load ($/kW): 2750
-* Yearly CO2 Foot Print : 0 
+* Yearly CO2 Foot Print : 0
+* Equivalent in car : 0
 
 As per volkswagenag.com news( Rjukan/Wolfsburg, 2019-06-18), this data center is "100 percent powered by hydropower – resulting in a savings of more than 5,800 tons of CO2 per year"
-
-* Equivalent in car : 0
 
 ### References: 
 1. <https://www.volkswagenag.com/en/news/2019/06/volkswagen_norway_data_center.html>
 1. <https://www.cnet.com/roadshow/news/volkswagen-carbon-neutral-data-center-norway/>
-
+1. <https://www.volkswagen-newsroom.com/en/press-releases/green-computing-performance-volkswagen-opens-carbon-neutral-data-center-in-norway-5090>
 
 ## E.Datacenter.2b
 
