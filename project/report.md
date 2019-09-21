@@ -8,6 +8,7 @@ We will be providing database abstractions to host arbitrary databases in arbitr
 1. Amazon
 1. Azure 
 1. and Local DB
+
 We will be providing pytest to deploy and execute the verification of the correctness of this services.
 
 ## Design Components 
