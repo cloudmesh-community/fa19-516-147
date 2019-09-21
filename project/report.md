@@ -1,16 +1,18 @@
-##  Implementation of Data Pipeline & consumtion API
+##  Data Management on Cloud  / Managing Multi Cloud data  
 Harsha Upadhyay
 
 ## Objective
 
-Objective of this project is to design and implement data pipeline to load CSV data into Cloud environment and make it available for consumption through REST API.
+Objective of this project is to perform data management activities on Cloud DB by abstracting ,loading and accessing data into Cloud DB .
+
+/%Objective of this project is to design and implement data pipeline to load CSV data into Cloud environment and make it available for consumption through REST API.%/
 
 ## Design Components 
 
 * Source Data / File residing in cloud or On-prim
-* Data pipeline design 
-* Target table design (in cloud) 
-* REST API design (to surface edata from cloud table and make availble for consumtion )
+* Data abstract
+* Target table design (in multiple cloud) 
+* REST API design (to surface data from cloud table and make availble for consumtion )
 
 ## Technology Used
 
