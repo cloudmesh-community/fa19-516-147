@@ -1,4 +1,4 @@
-##  Database abstraction in muilti cloud environments
+##  Database abstraction in multi cloud environments
 
 fa19-516-147, Harsha Upadhyay
 
