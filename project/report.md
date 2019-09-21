@@ -1,4 +1,4 @@
-##  Data Management on Cloud  / Managing Multi Cloud data  
+##  Data Management on Cloud DB / Managing Cloud DB data  
 Harsha Upadhyay
 
 ## Objective
