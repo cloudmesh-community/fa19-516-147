@@ -4,12 +4,11 @@ fa19-516-147, Harsha Upadhyay
 
 ## Objective
 
-We will be providing database abstractions to host arbitry databases in arbitary cloud environments.I norder to varify trhat the databse provision;ing multi cloud env works we will be providing a detailed test to manupulate data indatbase , this will incljude standerd datbase functionality.The implemention is being is cunduded as part of API rest services and we will be using following clud . amazon, azure and local db . we will bb eproviding pytest to deploy and execute thye verification iof the correctness of this services
-
-
-Objective of this project is to perform data management activities on Cloud DB by abstracting ,loading and accessing databases into Cloud DB.
-
-/%Objective of this project is to design and implement data pipeline to load CSV data into Cloud environment and make it available for consumption through REST API.%/
+We will be providing database abstractions to host arbitrary databases in arbitrary cloud environments.In order to verify that the database provisioning multi cloud environment works , we will be providing a detailed test to manipulate data in database. This will include standard database functionality.The implementation is being conducted as part of API REST services and we will be using following clouds: 
+1. Amazon
+1. Azure 
+1. and Local DB
+We will be providing pytest to deploy and execute the verification of the correctness of this services.
 
 ## Design Components 
 
