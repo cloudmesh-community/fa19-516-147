@@ -1,29 +1,39 @@
-##  Implementation of AWS Data Pipeline
+##  Implementation of Data Pipeline & consumtion API
 Harsha Upadhyay
 
 ## Objective
 
-Objective of this project is to design and implement data pipeline to load data into AWS Cloud DB ,apply processing rules for data massaging and provide data for analytics.
+Objective of this project is to design and implement data pipeline to load CSV data into Cloud environment and make it available for consumption through REST API.
 
-ex. Extract , store and provide weekly usage report of Chameleon Cloud for project CH-819337 in DB hosted on AWS cloud(TBD) using AWS pipeline servcies 
+## Design Components 
 
-## What is AWS Pipeline
-
-As per AWS Docs avaible on the aws site (refernce below) 
-
-"AWS Data Pipeline is a web service that you can use to automate the movement and transformation of data. With AWS Data Pipeline, you can define data-driven workflows, so that tasks can be dependent on the successful completion of previous tasks. You define the parameters of your data transformations and AWS Data Pipeline enforces the logic that you've set up."
-
-https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/what-is-datapipeline.html
-
-## Architecture
+Source Data / File residing in cloud or On-prim
+Data pipeline design 
+Target table design (in cloud) 
+REST API design (to surface edata from cloud table and make availble for consumtion )
 
 ## Technology Used
 
-Source : Extract Flat File / DB 
-Target Infrastucture : AWS Cloud
-Target DB : TBD 
-API : Rest
+Source : CSV File
+Target Infrastucture : AWS Cloud  & Azure (as project requirements there should two cloud included, will use one which are available free or low cost)
+Target DB : willing to use Aurora or redshift but have to deside based on availability
+API : REST
 Code : Python
+Virtual Config : Cloudmesh
 
+## Architecture & Design Detail 
+
+Architecture Diagram 
+
+### Pipeline Design
+   
+TBD
+ 
+### Cloud Target Table 
+
+TBD
+
+### REST API
+TBD
 
 ## Conclusion
