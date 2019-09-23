@@ -31,15 +31,6 @@ We will be providing pytest to deploy and execute the verification of the correc
 
 Architecture Diagram 
 
-### Pipeline Design
-   
-TBD
- 
-### Cloud Target Table 
 
-TBD
-
-### REST API
-TBD
 
 ## Conclusion
