@@ -20,10 +20,10 @@ We will be providing pytest to deploy and execute the verification of the correc
 
 ## Technology Used
 
- AWS Cloud  & Azure 
- REST API
- Python
- Cloudmesh
+ * AWS Cloud  & Azure 
+ * REST API
+ * Python
+ * Cloudmesh
 
 ## Architecture 
 
