@@ -1,10 +1,10 @@
-##  Abstract Database Management On Multicloud Environments with Focus on Google Cloud
+##  Abstract Database Management On Multicloud Environments
 
 Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-147/edit/master/project/report.md)
 
 :o: put in url to python api for google in Refernces section
 
-:o: start looking at cloudmesh-cloud cloudmesh/compute/libcloud this is old code and may no longer work you will do the Compute ABC class for google cloud. 
+:o: start looking at cloudmesh-storage  
 
 :o: use proper punctioation space rules there is a space after a , . and so on but not before
 
@@ -24,7 +24,7 @@ part of API REST services and we will be using following clouds:
 1. Azure 
 1. and Local DB
 
-We will be providing pytest to deploy and execute the verification of the correctness of this services.
+We are providing pytests to deploy and execute the verification of the correctness of this services.
 
 ## Related Work
 
