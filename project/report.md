@@ -47,4 +47,6 @@ Architecture Diagram & Details
 ## Refernces
 
 1. <https://cloud.google.com/python/docs/reference/>
-2. <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
+1. <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
+1. <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
+1. <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
