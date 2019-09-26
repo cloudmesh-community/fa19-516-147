@@ -46,5 +46,5 @@ Architecture Diagram & Details
 
 ## Refernces
 
-1. https://cloud.google.com/python/docs/reference/
-2. ...
+1. <https://cloud.google.com/python/docs/reference/>
+2. <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
