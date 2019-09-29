@@ -1,4 +1,4 @@
-##  Abstract Database Management On Multicloud Environments (with focus on Azure and AWS3)
+# Abstract Database Management On Multicloud Environments (with focus on Azure and AWS3)
 
 Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-147/edit/master/project/report.md)
 
