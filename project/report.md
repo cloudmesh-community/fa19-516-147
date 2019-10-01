@@ -16,8 +16,8 @@ Abstract database management on Multicloud environments for the NIST Big Data Re
 
 We will be providing database abstractions to host arbitrary databases in arbitrary 
 cloud environments. In order to verify that the database provisioning multi cloud 
-environment works , we will be providing a detailed test to manipulate data in database. 
-This will include standard database functionality.The implementation is being conducted as 
+environment works, we will be providing a detailed test to manipulate data in database. 
+This will include standard database functionality. The implementation is being conducted as 
 part of API REST services and we will be using following clouds: 
 
 1. Amazon
