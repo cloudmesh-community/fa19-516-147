@@ -57,13 +57,14 @@ Architecture Diagram & Details
 ## Workbreakdown
 
 
-|Due Date | Project Task                      | Breakdown |
-|---------|-----------------------------------| --------- |
-|         |                                   |           |
-|         |                                   |           |
-|         |                                   |           |
-|10/18    | Project Review                    |           |
-|12/02    | Project Due                       |           |
-|12/09    | Project Final(No Grade Penalty    |           |
-|12/18    | Project Due with Penalty          |           |
+|Due Date | Project Task                      | Breakdown                                   |
+|---------|-----------------------------------| --------------------------------------------|
+|         | report.md file                    | report.md file creation in hid directory    |
+|         |                                   | Technology selection                        |
+|         |                                   | Finalize Design components                  |
+|         |                                   | Infrastructure set up                       |
+|10/18    | Project Review                    |                                             |
+|12/02    | Project Due                       |                                             |
+|12/09    | Project Final(No Grade Penalty)   |                                             |
+|12/18    | Project Due with Penalty          |                                             |
 
