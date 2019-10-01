@@ -56,3 +56,14 @@ Architecture Diagram & Details
 
 ## Workbreakdown
 
+
+|Due Date | Project Task                      | Breakdown |
+|---------|-----------------------------------| --------- |
+|         |                                   |           |
+|         |                                   |           |
+|         |                                   |           |
+|10/18    | Project Review                    |           |
+|12/02    | Project Due                       |           |
+|12/09    | Project Final(No Grade Penalty    |           |
+|12/18    | Project Due with Penalty          |           |
+
