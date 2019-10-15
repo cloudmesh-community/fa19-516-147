@@ -52,7 +52,9 @@ Architecture Diagram & Details
 1. <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
 
 ## Progress
+Infrasture setup : Azure account
 
+Cloud comuping 9.3 Microsoft Azure 
 
 ## Workbreakdown
 
