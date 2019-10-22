@@ -40,21 +40,32 @@ We are providing pytests to deploy and execute the verification of the correctne
 
 Architecture Diagram & Details 
 
+## Implementation Plan 
+
+ ### Databse Object Creation: 
+   Create Database objects like tables ,views  on a cloud DB (Azure SQL Database )
+   Python script to create objects 
+ 
+ ### Open API .yaml file
+   Create a yaml file 
+     * to get database , schema and DDL listing from one cloud environment (e.g Azure or AWS)
+     * to create/copy database schema and DDL in other cloude environment 
+ 
+ ### Setup Config file
+   Create a config file with environment detail for all environment used in the project
+  
+ ### Integration with cloudmesh 
+   
+  
 ## Benchmarks
 
 ## Conclusion
 
-## Refernces
-
-1. <https://cloud.google.com/python/docs/reference/>
-1. <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
-1. <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
-1. <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
-
 ## Progress
-Infrasture setup : Azure account
-
-Cloud comuping 9.3 Microsoft Azure 
+  * Azure account created
+  * A database created on Azure SQL Database
+  * Docker setup on local
+  * Python script to test connection to databse and deploy table
 
 ## Workbreakdown
 
@@ -70,3 +81,9 @@ Cloud comuping 9.3 Microsoft Azure
 |12/09    | Project Final(No Grade Penalty)   |                                             |
 |12/18    | Project Due with Penalty          |                                             |
 
+## Refernces
+
+1. <https://cloud.google.com/python/docs/reference/>
+1. <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
+1. <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
+1. <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
