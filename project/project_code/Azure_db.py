@@ -17,6 +17,6 @@ con = pyodbc.connect('DRIVER='+driver+';SERVER='+server+';PORT=1433;DATABASE='+d
 #con.commit()
 
 cur = con.cursor()
-string = "CREATE VIEW vw_tst select * from tst"
+string = "CREATE VIEW vw_tst AS select * from tst"
 cur.execute(string)
 con.commit()
