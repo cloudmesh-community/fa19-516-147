@@ -1,0 +1,263 @@
+openapi: "3.0.2"
+info:
+  version: 3.2.0
+  x-date: 17-06-2019
+  x-status: defined
+  title: Database
+  description: |-
+
+    The database specification allows to register a database and perform
+    elementary operations to use this database. We distinguish actions
+    related to the registration, the adding of a schema, the insertion of
+    data and the query of data. The data base is defined by a name an endpoint
+    (e.g., host, port), and a protocol used (e.g., SQL, MongoDB, graphgl, and
+     others).
+
+  termsOfService: "https://github.com/cloudmesh/cloudmesh-nist/blob/master/LICENSE.txt"
+  contact:
+    name: NIST BDRA Interface Subgroup
+    url: https://cloudmesh-community.github.io/nist/spec/
+  license:
+    name: Apache 2.0
+    url: https://github.com/cloudmesh/cloudmesh-nist/blob/master/LICENSE.txt
+servers:
+  - url: /cloudmesh/v3
+paths:
+  /database:
+    get:
+      tags:
+        - "Database Registry"
+      summary: Returns all databases
+      description: Returns all databases
+      operationId: cloudmesh.database.get
+      responses:
+        '200':
+          description: List of databases
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Database"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+  /database/{name}/schema:
+    get:
+      tags:
+      - "Database Schema"
+      summary: Get the list of the schema
+      description: ""
+      operationId: "cloudmesh.database.get.schema"
+      parameters:
+        - name: name
+          description: Name of the schema
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully returned the schema"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Schema"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+      - "Database Schema"
+      summary: "Upload  a schema"
+      description: ""
+      operationId: "cloudmesh.database.put.schema"
+      parameters:
+        - name: name
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully returned the list"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Schema"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+        - "Database Registry"
+      summary: Deletes a database from the list of databases
+      description: Deletes a database from the list of databases
+      operationId: cloudmesh.database.delete
+      parameters:
+        - name: name
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Deletion successful
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+  /database/{name}:
+    get:
+      tags:
+      - "Database Data"
+      summary: Query the named database
+      description: Query the named database
+      operationId: "cloudmesh.database.data.get"
+      parameters:
+        - name: name
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: query
+          description: Database Query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Query'
+      responses:
+        '200':
+          description: Successfull query
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Record"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+      - "Database Data"
+      summary: "add data to the table or collection"
+      description: ""
+      operationId: "cloudmesh.database.data.put"
+      parameters:
+        - name: name
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Record to be uploaded
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record"
+      responses:
+        '200':
+          description: "successfully uploaded"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Record"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+      - "Database Data"
+      summary: "Delete the objects matching the query"
+      description: ""
+      operationId: "cloudmesh.database.data.delete"
+      parameters:
+        - name: name
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: query
+          description: Database Query
+          in: query
+          required: true
+          schema:
+            $ref: '#/components/schemas/Query'
+      responses:
+        '200':
+          description: Successfull query
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Record"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+components:
+  schemas:
+    Database:
+      type: object
+      description: Defines a database object as an entry
+      properties:
+        name:
+          type: string
+          description: Name of the database
+        description:
+          type: string
+          description: Description of the database
+        endpoint:
+          type: string
+          description: Endpoint of the database
+        kind:
+          type: string
+          description: the kind of the database
+    Schema:
+      type: object
+      description: Defines a database
+      properties:
+        name:
+          type: string
+          description: Name of the database
+        description:
+          type: string
+          description: Description of the database
+        kind:
+          type: string
+          description: The kind of the definition
+        content:
+           type: string
+           description: The schema associated with the table or collection
+    Record:
+      type: object
+      description: The result of a query
+      properties:
+        status:
+          type: string
+          description: The status of the reurn
+        result:
+          type: string
+          description: The result of the quesry in json string format
+    Query:
+      type: object
+      description: The  query
+      properties:
+        status:
+          type: string
+          description: The query string
