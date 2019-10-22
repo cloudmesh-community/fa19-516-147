@@ -5,7 +5,7 @@ import pyodbc
 server = 'abssrv.database.windows.net'
 database = 'absdb'
 username = 'haupadhy'
-password = '**********'
+password = 'Ganeshd0yourbest'
 driver= '{ODBC Driver 17 for SQL Server}'
 
 
