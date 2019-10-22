@@ -29,11 +29,11 @@ We are providing pytests to deploy and execute the verification of the correctne
 ## Related Work
 
 
-## Technology Used
+## Technology detail
 
- * AWS Cloud  & Azure 
- * REST API
- * Python
+ * AWS Redshift  & Azure SQL Database
+ * REST / Open API
+ * Python Scripting
  * Cloudmesh
 
 ## Architecture 
@@ -42,19 +42,19 @@ Architecture Diagram & Details
 
 ## Implementation Plan 
 
- ### Database Object Creation: 
+ ### Step 1: Database Object Creation
    Create Database objects like tables ,views  on a cloud DB (Azure SQL Database )
    Python script to create objects 
  
- ### Open API .yaml file
+ ### Step 2: Open API .yaml file
    Create a yaml file 
      * to get database , schema and DDL listing from one cloud environment (e.g Azure or AWS)
      * to create/copy database schema and DDL in other cloude environment 
  
- ### Setup Config file
+ ### Step3: Setup Config file
    Create a config file with environment detail for all environment used in the project
   
- ### Integration with cloudmesh 
+ ### Step4 : Integration with cloudmesh 
    
   
 ## Benchmarks
