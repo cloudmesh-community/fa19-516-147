@@ -42,7 +42,7 @@ Architecture Diagram & Details
 
 ## Implementation Plan 
 
- ### Databse Object Creation: 
+ ### Database Object Creation: 
    Create Database objects like tables ,views  on a cloud DB (Azure SQL Database )
    Python script to create objects 
  
@@ -66,6 +66,7 @@ Architecture Diagram & Details
   * A database created on Azure SQL Database
   * Docker setup on local
   * Python script to test connection to databse and deploy table
+  * AWS account creation
 
 ## Workbreakdown
 
