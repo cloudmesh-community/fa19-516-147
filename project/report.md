@@ -2,12 +2,6 @@
 
 Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-147/edit/master/project/report.md)
 
-:o: put in url to python api for google in Refernces section
-
-:o: start looking at cloudmesh-storage  
-
-:o: use proper punctioation space rules there is a space after a , . and so on but not before
-
 ## Objective
 
 Abstract database management on Multicloud environments for the NIST Big Data Reference Architecture AWS, Azure.
@@ -26,7 +20,7 @@ part of API REST services and we will be using following clouds:
 
 We are providing pytests to deploy and execute the verification of the correctness of this services.
 
-## Comparision of Cloud database servcies 
+## Comparison of Cloud Database Servcies 
 
 Azure
 AWS
@@ -37,7 +31,7 @@ SAP
 MongoDB
 Other
 
-## Overview of Cludmesh
+## Overview of Cloudmesh
 
 Why ..Motivation..
 
@@ -46,7 +40,7 @@ Why ..Motivation..
 * file based:
 
 * recursive tree
-* Transfer queque 
+* Transfer queue 
 * Command shell
 * Rest API
 * Python API
