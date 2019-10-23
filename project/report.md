@@ -26,8 +26,35 @@ part of API REST services and we will be using following clouds:
 
 We are providing pytests to deploy and execute the verification of the correctness of this services.
 
-## Related Work
+## Comparision of Cloud database servcies 
 
+Azure
+AWS
+Google
+Oracle
+IBM
+SAP
+MongoDB
+Other
+
+## Overview of Cludmesh
+
+Why ..Motivation..
+
+## Requirements
+
+* file based:
+
+* recursive tree
+* Transfer queque 
+* Command shell
+* Rest API
+* Python API
+
+
+## Architecture 
+
+Architecture Diagram & Details 
 
 ## Technology detail
 
@@ -35,10 +62,6 @@ We are providing pytests to deploy and execute the verification of the correctne
  * REST / Open API
  * Python Scripting
  * Cloudmesh
-
-## Architecture 
-
-Architecture Diagram & Details 
 
 ## Implementation Plan 
 
