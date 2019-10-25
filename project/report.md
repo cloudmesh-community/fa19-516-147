@@ -20,8 +20,22 @@ part of API REST services and we will be using following clouds:
 
 We are providing pytests to deploy and execute the verification of the correctness of this services.
 
-## Comparison of Cloud Database Services 
+## Cloud Database Services 
 
+Clouding computing is a market emerging trend. It provides on-demand availability of computer system resources, databases , storage etc without direct active management by the user.
+
+When we talk about database , there are two models,
+ 
+1. Traditional cloud model and 
+2. Database-as-a-service (DBaaS)
+
+ A cloud database is a database running on a cloud computing platform that could be private, public or hybrid.Cloud database as a service is becoming more and more populer these days because of following main reasons:
+ 
+* no physical infrastructure needed
+* can be scaled quickly and efficiently
+* mostly self-managed database with less administrative overhead
+ 
+Here is a quick reference table giving the listing of database services options available from cloud services provider market leader ,  
 
 |Azure                          | AWS                      |    Google                 |Oracle                             | IBM                                  |MongoDB      |
 |-------------------------------| -------------------------|---------------------------|-----------------------------------|--------------------------------------|-------------|
@@ -38,25 +52,17 @@ We are providing pytests to deploy and execute the verification of the correctne
 | Database for MariaDB          |                          |                           |                                   | Hyper Protect DBaaS for MongoDB      |             |
 |                               |                          |                           |                                   | Hyper Protect DBaaS for PostgreSQL   |             |    
 
+## Cloudmesh 
 
-## Overview of Cloudmesh
-
-Why ..Motivation..
-
-## Requirements
-
-* file based:
-
-* recursive tree
-* Transfer queue 
-* Command shell
-* Rest API
-* Python API
+Cloudmesh is a multicloud architecture system which offers single architecture for using multiple cloud provides at the same time.
+ 
+Adbvantage of using cloudmesh is that it not onlyb provides a REST based API but also commandline shell which makes easier to switch between clouds using single variable.
 
 
 ## Architecture 
 
-Architecture Diagram & Details 
+
+![](Multi_Cloud_Data_Abstraction.png)
 
 ## Technology detail
 
@@ -112,6 +118,7 @@ Architecture Diagram & Details
 
 ## Refernces
 
+1. Cloud Computing by Von Laszewski <https://github.com/cloudmesh-community/book/tree/master/books>
 1. APIs and Python libraries <https://cloud.google.com/python/docs/reference/>
 1. Google Cloud APIs <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
 1. Cloudmesh Storage Open API <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
