@@ -22,13 +22,13 @@ We are providing pytests to deploy and execute the verification of the correctne
 
 ## Motivation 
 
-Clouding computing is a market emerging trend. It provides on-demand availability of computer system resources, databases , storage etc without direct active management by the user.
+Clouding computing is a market emerging trend. It provides on-demand availability of computer system resources, databases , storage etc. without direct maintenance of the platform by the user of cloud services.
 
-A cloud database is a database running on a cloud computing platform that could be private, public or hybrid.
+A cloud database is a database which runs on a cloud computing platform. This platform can be private, public or hybrid.
 When we talk about database , there are two models,
  
-1. Traditional cloud model and 
-2. Database-as-a-service (DBaaS)
+1. Traditional cloud model
+2. Database as a service (DBaaS)
 
 Cloud database as a service is becoming more and more populer these days because of the following main reasons:
  
@@ -36,7 +36,7 @@ Cloud database as a service is becoming more and more populer these days because
 * can be scaled quickly and efficiently
 * mostly self-managed database with less administrative overhead
 
-In this cloud computing project ,cloud database as a service feature will be used with the objective of creating a functionality to deploy a database in multiple could. 
+In this cloud computing project, cloud database as a service feature will be used with the objective of creating a functionality to deploy a database in multiple cloud environment. 
  
 Here is a quick reference table giving the listing of database services available from different cloud services provider market leaders ,  
 
