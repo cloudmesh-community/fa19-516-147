@@ -20,16 +20,17 @@ part of API REST services and we will be using following clouds:
 
 We are providing pytests to deploy and execute the verification of the correctness of this services.
 
-## Cloud Database Services 
+## Motivation 
 
 Clouding computing is a market emerging trend. It provides on-demand availability of computer system resources, databases , storage etc without direct active management by the user.
 
+A cloud database is a database running on a cloud computing platform that could be private, public or hybrid.
 When we talk about database , there are two models,
  
 1. Traditional cloud model and 
 2. Database-as-a-service (DBaaS)
 
- A cloud database is a database running on a cloud computing platform that could be private, public or hybrid.Cloud database as a service is becoming more and more populer these days because of following main reasons:
+Cloud database as a service is becoming more and more populer these days because of the following main reasons:
  
 * no physical infrastructure needed
 * can be scaled quickly and efficiently
