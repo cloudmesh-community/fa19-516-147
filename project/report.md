@@ -23,20 +23,20 @@ We are providing pytests to deploy and execute the verification of the correctne
 ## Comparison of Cloud Database Services 
 
 
-|Database Ty|Azure                          | AWS                      |    Google                 |Oracle                             | IBM                                  |MongoDB      |
-|-----------|-------------------------------| -------------------------|---------------------------|-----------------------------------|--------------------------------------|-------------|
-|Relational | Cosmos DB                     | Auora                    | Cloud SQL                 | Autonomous Data Warehouse         | IBM Cloudant                         |MongoDB Atlas|
-|           | SQL Database                  | RDS                      | Cloud Spanner             | Autonomous Transaction Processing | IBM Cloud Databases for MongoDB      |             | 
-|           | Database for MySQL            | Redshift                 | Cloud Bigtable            | Database Cloud Service–Bare Metal | IBM Cloud Databases for Elasticsearch|             |
-|           | Database for PostgreSQL       | DynamoDB                 | Cloud Firestone           | Database on virtual machines (VMs)| IBM Cloud Databases for etcd         |             |
-|           | Database for MariaDB          | ElastiCache for Memcached| Firebase realtime Database| Exadata Database Machine          | IBM Cloud Databases for PostgreSQL   |             |                       
-|           | SQL Server on Virtual Machines|ElastiCache for Redis     | Cloud Memory Store        | Database Exadata Cloud at Customer| IBM Cloud Messages for RabbitMQ      |             |
-|           | Database Migration Service    | DocumentDB               |                           | NoSQL Database                    | IBM Compose for JanusGraph           |             |
-|           | Cache for Redis               | Neptune                  |                           |                                   | IBM Db2 on Cloud                     |             |
-|           | Table Storage                 | Timestream               |                           |                                   | IBM Db2 Warehouse on Cloud           |             |
-|           | Data Explorer                 | QLDB                     |                           |                                   | IBM Compose for ScyllaDB             |             |
-|           | Database for MariaDB          |                          |                           |                                   | Hyper Protect DBaaS for MongoDB      |             |
-|           |                               |                          |                           |                                   | Hyper Protect DBaaS for PostgreSQL   |             |    
+|Azure                          | AWS                      |    Google                 |Oracle                             | IBM                                  |MongoDB      |
+|-------------------------------| -------------------------|---------------------------|-----------------------------------|--------------------------------------|-------------|
+| Cosmos DB                     | Auora                    | Cloud SQL                 | Autonomous Data Warehouse         | IBM Cloudant                         |MongoDB Atlas|
+| SQL Database                  | RDS                      | Cloud Spanner             | Autonomous Transaction Processing | IBM Cloud Databases for MongoDB      |             | 
+| Database for MySQL            | Redshift                 | Cloud Bigtable            | Database Cloud Service–Bare Metal | IBM Cloud Databases for Elasticsearch|             |
+| Database for PostgreSQL       | DynamoDB                 | Cloud Firestone           | Database on virtual machines (VMs)| IBM Cloud Databases for etcd         |             |
+| Database for MariaDB          | ElastiCache for Memcached| Firebase realtime Database| Exadata Database Machine          | IBM Cloud Databases for PostgreSQL   |             |                       
+| SQL Server on Virtual Machines|ElastiCache for Redis     | Cloud Memory Store        | Database Exadata Cloud at Customer| IBM Cloud Messages for RabbitMQ      |             |
+| Database Migration Service    | DocumentDB               |                           | NoSQL Database                    | IBM Compose for JanusGraph           |             |
+| Cache for Redis               | Neptune                  |                           |                                   | IBM Db2 on Cloud                     |             |
+| Table Storage                 | Timestream               |                           |                                   | IBM Db2 Warehouse on Cloud           |             |
+| Data Explorer                 | QLDB                     |                           |                                   | IBM Compose for ScyllaDB             |             |
+| Database for MariaDB          |                          |                           |                                   | Hyper Protect DBaaS for MongoDB      |             |
+|                               |                          |                           |                                   | Hyper Protect DBaaS for PostgreSQL   |             |    
 
 
 ## Overview of Cloudmesh
@@ -60,7 +60,7 @@ Architecture Diagram & Details
 
 ## Technology detail
 
- * AWS Redshift  & Azure SQL Database
+ * AWS Redshift/ RDS  & Azure SQL Database
  * REST / Open API
  * Python Scripting
  * Cloudmesh
