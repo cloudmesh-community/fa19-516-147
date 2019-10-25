@@ -35,6 +35,8 @@ Cloud database as a service is becoming more and more populer these days because
 * no physical infrastructure needed
 * can be scaled quickly and efficiently
 * mostly self-managed database with less administrative overhead
+
+In this cloud computing project ,cloud database as a service feature will be used with the objective of creating a functionality to deploy a database in multiple could. 
  
 Here is a quick reference table giving the listing of database services available from different cloud services provider market leaders ,  
 
