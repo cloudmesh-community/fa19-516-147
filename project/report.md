@@ -35,7 +35,7 @@ When we talk about database , there are two models,
 * can be scaled quickly and efficiently
 * mostly self-managed database with less administrative overhead
  
-Here is a quick reference table giving the listing of database services options available from cloud services provider market leader ,  
+Here is a quick reference table giving the listing of database services available from different cloud services provider market leaders ,  
 
 |Azure                          | AWS                      |    Google                 |Oracle                             | IBM                                  |MongoDB      |
 |-------------------------------| -------------------------|---------------------------|-----------------------------------|--------------------------------------|-------------|
@@ -56,7 +56,7 @@ Here is a quick reference table giving the listing of database services options 
 
 Cloudmesh is a multicloud architecture system which offers single architecture for using multiple cloud provides at the same time.
  
-Adbvantage of using cloudmesh is that it not onlyb provides a REST based API but also commandline shell which makes easier to switch between clouds using single variable.
+Adbvantage of using cloudmesh is that it not only provides a REST based API but also commandline shell which makes easier to switch between clouds using single variable.
 
 
 ## Architecture 
