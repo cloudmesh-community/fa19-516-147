@@ -58,7 +58,7 @@ Here is a quick reference table giving the listing of database services availabl
 
 ![](Multi_Cloud_Data_Abstraction.png)
 
-## Technology detail
+## Technology Detail
 
  * Cloudmesh
  
@@ -95,10 +95,7 @@ Here is a quick reference table giving the listing of database services availabl
   
  ### Step4 : Integration with cloudmesh 
    Set up command line 
-  
-## Benchmarks
-
-## Conclusion
+ 
 
 ## Progress
   * Azure account created
