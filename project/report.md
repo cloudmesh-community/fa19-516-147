@@ -112,10 +112,10 @@ Architecture Diagram & Details
 
 ## Refernces
 
-1. <https://cloud.google.com/python/docs/reference/>
-1. <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
-1. <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
-1. <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
+1. APIs and Python libraries <https://cloud.google.com/python/docs/reference/>
+1. Google Cloud APIs <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
+1. Cloudmesh Storage Open API <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
+1. NIST <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
 1. Azure SQL Database <https://azure.microsoft.com/en-us/services/sql-database/>
 1. Azure Cloud Database Services <https://azure.microsoft.com/en-us/product-categories/databases/>
 1. AWS Cloud Database Services <https://aws.amazon.com/products/databases/>
