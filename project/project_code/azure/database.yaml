@@ -75,7 +75,7 @@ paths:
       - "Database Schema"
       summary: "Upload  a schema"
       description: ""
-      operationId: "cloudmesh.database.put.schema"
+      operationId: "cloudmesh.database.put_schema"
       parameters:
         - name: name
           description: Name of the database
@@ -120,7 +120,7 @@ paths:
       - "Database Data"
       summary: Query the named database
       description: Query the named database
-      operationId: "cloudmesh.database.data.get"
+      operationId: "cloudmesh.database.data_get"
       parameters:
         - name: name
           description: Name of the database
@@ -152,7 +152,7 @@ paths:
       - "Database Data"
       summary: "add data to the table or collection"
       description: ""
-      operationId: "cloudmesh.database.data.put"
+      operationId: "cloudmesh.database.data_put"
       parameters:
         - name: name
           description: Name of the database
@@ -183,7 +183,7 @@ paths:
       - "Database Data"
       summary: "Delete the objects matching the query"
       description: ""
-      operationId: "cloudmesh.database.data.delete"
+      operationId: "cloudmesh.database.data_delete"
       parameters:
         - name: name
           description: Name of the database
