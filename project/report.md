@@ -81,45 +81,30 @@ Here is a quick reference table giving the listing of database services availabl
 
 ## Implementation Plan 
 
- ### Step 1: Database Object Creation
+### Step 1: Database Object Creation
    Create Database objects like tables ,views  on a cloud DB (Azure SQL Database )
    Python script to create objects 
  
- ### Step 2: Open API .yaml file
+### Step 2: Open API .yaml file
    Create a yaml file 
      * to get database , schema and DDL listing from one cloud environment (e.g Azure or AWS)
      * to create/copy database schema and DDL in other cloude environment 
         
         database.yaml
- ### Step3: Setup Config file
+### Step3: Setup Config file
    Create a config file with environment detail for all environment used in the project
    
         cloudmesh.yaml 
   
- ### Step4 : Integration with cloudmesh 
+### Step4 : Integration with cloudmesh 
    Set up command line 
  
-
 ## Progress
   * Azure account created
   * A database created on Azure SQL Database
   * Docker setup on local
   * Python script to test connection to databse and deploy table
   * AWS account creation
-
-## Workbreakdown
-
-
-|Due Date | Project Task                      | Breakdown                                   |
-|---------|-----------------------------------| --------------------------------------------|
-|         | report.md file                    | report.md file creation in hid directory    |
-|         |                                   | Technology selection                        |
-|         |                                   | Finalize Design components                  |
-|         |                                   | Infrastructure set up                       |
-|10/18    | Project Review                    |                                             |
-|12/02    | Project Due                       |                                             |
-|12/09    | Project Final(No Grade Penalty)   |                                             |
-|12/18    | Project Due with Penalty          |                                             |
 
 ## Refernces
 
