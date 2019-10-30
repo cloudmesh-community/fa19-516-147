@@ -90,12 +90,12 @@ Here is a quick reference table giving the listing of database services availabl
      * to get database , schema and DDL listing from one cloud environment (e.g Azure or AWS)
      * to create/copy database schema and DDL in other cloude environment 
         
-    database.yaml
+   database.yaml
         
 ### Step3: Setup Config file
    Create a config file with environment detail for all environment used in the project
    
-    cloudmesh.yaml 
+   cloudmesh.yaml 
   
 ### Step4 : Integration with cloudmesh 
    Set up command line 
