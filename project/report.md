@@ -22,10 +22,10 @@ We are providing pytests to deploy and execute the verification of the correctne
 
 ## Motivation 
 
-Clouding computing is a market emerging trend. It provides on-demand availability of computer system resources, databases , storage etc. without direct maintenance of the platform by the user of cloud services.
+Clouding computing is a market emerging trend. It provides on-demand availability of computer system resources, databases, storage etc. without direct maintenance of the platform by the user of cloud services.
 
 A cloud database is a database which runs on a cloud computing platform. This platform can be private, public or hybrid.
-When we talk about database , there are two models,
+When we talk about database, there are two models,
  
 1. Traditional cloud model
 2. Database as a service (DBaaS)
@@ -38,7 +38,7 @@ Cloud database as a service is becoming more and more populer these days because
 
 In this cloud computing project, cloud database as a service feature will be used with the objective of creating a functionality to deploy a database in multiple cloud environment. 
  
-Here is a quick reference table giving the listing of database services available from different cloud services provider market leaders ,  
+Here is a quick reference table giving the listing of database services available from different cloud services provider market leaders,  
 
 |Azure                          | AWS                      |    Google                 |Oracle                             | IBM                                  |MongoDB      |
 |-------------------------------| -------------------------|---------------------------|-----------------------------------|--------------------------------------|-------------|
@@ -65,7 +65,7 @@ Here is a quick reference table giving the listing of database services availabl
 
  * Cloudmesh
  
-   Cloudmesh is a multicloud architecture system which offers single architecture for using multiple cloud provides at the      same time.Adbvantage of using cloudmesh is that it not only provides a REST based API but also commandline shell which      makes easier to switch between clouds using single variable.
+   Cloudmesh is a multicloud architecture system which offers single architecture for using multiple cloud provides at the      same time. Adbvantage of using cloudmesh is that it not only provides a REST based API but also commandline shell which      makes easier to switch between clouds using single variable.
    
  * REST / Open API
  
@@ -77,12 +77,12 @@ Here is a quick reference table giving the listing of database services availabl
    
  * AWS Redshift/ RDS  & Azure SQL Database
  
-   AWS and Azure are two market leading cloud services provider from Amazon and Microsoft respectively. AWS and Azure both      offer number of database services. In project , relation SQL database from these cloud providers will be used. 
+   AWS and Azure are two market leading cloud services provider from Amazon and Microsoft respectively. AWS and Azure both      offer number of database services. In project, relation SQL database from these cloud providers will be used. 
 
 ## Implementation Plan 
 
 ### Step 1: Database Object Creation
-   Create Database objects like tables ,views  on a cloud DB (Azure SQL Database )
+   Create Database objects like tables, views  on a cloud DB (Azure SQL Database )
    Python script to create objects 
  
 ### Step 2: Open API .yaml file
