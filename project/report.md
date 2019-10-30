@@ -109,7 +109,7 @@ Here is a quick reference table giving the listing of database services availabl
 
 ## Refernces
 
-1. Cloud Computing by Von Laszewski <https://github.com/cloudmesh-community/book/tree/master/books>
+1. Cloud Computing by von Laszewski <https://github.com/cloudmesh-community/book/tree/master/books>
 1. APIs and Python libraries <https://cloud.google.com/python/docs/reference/>
 1. Google Cloud APIs <https://github.com/googleapis/google-cloud-python#google-cloud-python-client>
 1. Cloudmesh Storage Open API <https://github.com/cloudmesh/cloudmesh-storage/blob/master/cloudmesh/storage/spec/openapi_storage.yaml>
