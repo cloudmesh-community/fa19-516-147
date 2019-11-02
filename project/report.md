@@ -42,7 +42,8 @@ In this cloud computing project, cloud database as a service feature will be use
  
 Here is a quick reference table giving the listing of database services available from different cloud services provider market leaders,  
 
-![](Cloud_Database_Products.png)
+![](Cloud_Database_Product.png)
+![](Cloud_Database_Comparison.png)
 
 ## Architecture Diagram
 
@@ -94,6 +95,9 @@ Here is a quick reference table giving the listing of database services availabl
   * Docker setup on local
   * Python script to test connection to databse and deploy table
   * AWS account creation
+  * Code diretory & file strucure set up complete
+  * Database.py created for get ,set Db and Schema
+  * Database.py tested for get ,set Db and Schema
 
 ## Refernces
 
