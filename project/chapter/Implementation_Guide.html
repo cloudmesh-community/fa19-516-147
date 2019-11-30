@@ -1,0 +1,705 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.6  (Unix)">
+	<META NAME="AUTHOR" CONTENT="Harsha Upadhyay">
+	<META NAME="CREATED" CONTENT="20191128;12594400">
+	<META NAME="CHANGEDBY" CONTENT="Harsha Upadhyay">
+	<META NAME="CHANGED" CONTENT="20191130;12281600">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+		H2 { margin-bottom: 0.08in }
+		H2.ctl { font-family: "Arial Unicode MS" }
+		TD P { margin-bottom: 0in }
+		H1 { margin-bottom: 0.08in }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt }
+		H1.cjk { font-family: "Arial Unicode MS"; font-size: 16pt }
+		H1.ctl { font-family: "Arial Unicode MS"; font-size: 16pt }
+		H3 { margin-bottom: 0.08in }
+		H3.western { font-family: "Arial", sans-serif }
+		H3.ctl { font-family: "Arial Unicode MS" }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<DIV ID="Table of Contents1" DIR="LTR" STYLE="background: #ffffff">
+	<DIV ID="Table of Contents1_Head" DIR="LTR">
+		<P STYLE="margin-top: 0.17in; page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Table
+		of Contents</B></FONT></FONT></P>
+	</DIV>
+	<P STYLE="margin-bottom: 0in">1.0 Pre-requisite	1</P>
+	<P STYLE="margin-bottom: 0in">2.0 Environment Setup	1</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">2.1 Installing
+	Python , Python packages and Cloudmesh	1</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">2.4 Create cloud
+	account and database instance on cloud environment 	1</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">2.5 Update
+	.cloudmesh.yaml file on you local install 	2</P>
+	<P STYLE="margin-bottom: 0in">3.0 Abstract Database Management API
+		2</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">3.1 Overview:	2</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">3.2 SQL and NoSQL
+	at a glance:	2</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">3.3 Database API
+	specification:	3</P>
+	<P STYLE="margin-left: 0.39in; margin-bottom: 0in">3.3.1 Operation:
+	Database level operations 	3</P>
+	<P STYLE="margin-left: 0.39in; margin-bottom: 0in">3.3.2 Operation:
+	Schema level operations	3</P>
+	<P STYLE="margin-left: 0.39in; margin-bottom: 0in">3.3.3 Operation:
+	Table level operations	4</P>
+	<P STYLE="margin-left: 0.39in; margin-bottom: 0in">3.3.4 Operation:
+	Table data operations	4</P>
+	<P STYLE="margin-left: 0.2in; margin-bottom: 0in">3.4 Cloudmesh
+	Impacted Script and Changes :	5</P>
+</DIV>
+<H1 CLASS="western"></H1>
+<H1 CLASS="western">1.0 Pre-requisite</H1>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Operating
+	system(Windows, Mac,  Unix/Linux ) </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Python
+	3.7 or up </FONT></FONT>
+	</P>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Processor
+	: 2GHz inter core i5</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>RAM:
+	8GB</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="font-weight: normal">Cloud
+	Accounts for Database instance: </SPAN></FONT></FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=1 STYLE="font-size: 8pt"><SPAN STYLE="font-weight: normal">Azure
+	SQL developer and AWS RDS SQL Server used in this project </SPAN></FONT></FONT>
+	</P>
+</UL>
+<P STYLE="margin-bottom: 0in; font-weight: normal"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>This
+project is developed on Mac OS with 8 GB RAM and 2GHZ intel core i5
+processor.</FONT></FONT></P>
+<P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Python
+version 3.7 and PyCharm are used. </FONT></FONT>
+</P>
+<H1 CLASS="western">2.0 Environment Setup</H1>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Database abstraction
+API package includes : </FONT></FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<UL>
+	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>README.md</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>requirement.txt</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>server.py</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>database.yaml</FONT></FONT></P>
+	<LI><P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>databse.py</FONT></FONT></P>
+	<P STYLE="margin-bottom: 0in"></P>
+</UL>
+<H2 CLASS="western" STYLE="font-style: normal; font-weight: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">2.1
+Installing Python , Python packages and Cloudmesh</FONT></FONT></FONT></H2>
+<P><FONT COLOR="#292b2c">      </FONT><FONT FACE="Arial, sans-serif"><FONT SIZE=3><FONT COLOR="#292b2c"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">Refer
+README.md</SPAN></SPAN></FONT></FONT></FONT></FONT></P>
+<H2 CLASS="western" STYLE="page-break-after: avoid"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">2.4
+Create cloud account and database instance on cloud environment </SPAN></SPAN></FONT></FONT></FONT>
+</H2>
+<P STYLE="margin-left: 0.49in"><FONT FACE="Arial, sans-serif"><FONT COLOR="#292b2c"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">AWS
+RDS  S</SPAN></SPAN></FONT></FONT><FONT COLOR="#292b2c"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">QL
+Server Express Edition </SPAN></SPAN></FONT></FONT></FONT>
+</P>
+<P STYLE="margin-left: 0.49in"><FONT FACE="Arial, sans-serif"><FONT COLOR="#292b2c"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">AZURE
+SQL Databases</SPAN></SPAN></FONT></FONT></FONT></P>
+<H2 CLASS="western" STYLE="font-style: normal; font-weight: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">2.5
+Update .cloudmesh.yaml file on you local install </FONT></FONT></FONT>
+</H2>
+<PRE STYLE="margin-left: 0.49in"><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><SPAN STYLE="font-style: normal"><B>database</B></SPAN></FONT><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>aws</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>cm</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>active</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: False</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>heading</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: homedir</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>host</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: aws.com</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>label</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: home-dir</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>kind</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: awssql</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>version</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>service</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: database</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>default</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>directory</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>credentials</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>server</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: </FONT></FONT><FONT COLOR="#008000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>'TBD.us-east-2.rds.amazonaws.com'</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT COLOR="#008000">      </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>database</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: </FONT></FONT><FONT COLOR="#008000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>TBD </B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT COLOR="#008000">      </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>username</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: </FONT></FONT><FONT COLOR="#008000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>TBD </B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT COLOR="#008000">      </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>password</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: </FONT></FONT><FONT COLOR="#008000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>TBD </B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT COLOR="#008000">      </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>driver</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: </FONT></FONT><FONT COLOR="#008000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>'{ODBC Driver 17 for SQL Server}'</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#008000">      </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>name</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT></PRE><H1 CLASS="western" STYLE="font-style: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><B>3.0 Abstract
+Database Management API </B></FONT></FONT>
+</H1>
+<H2 CLASS="western" STYLE="font-style: normal; font-weight: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">3.1
+Overview:</FONT></FONT></FONT></H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Abstract
+Database Management projects provides ability to perform database
+operations as a service using Open API connexion service and reading
+specification from yaml file designed based on existing NIST
+template.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>database.yaml
+for the database abstraction project is designed keeping relational
+SQL databases as main focus. Relational database terminology is being
+used.</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Functions
+to performed database operations are  defined in a python file.Three
+main components of database service are :</FONT></FONT></FONT></P>
+<UL>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>server.py
+	</FONT></FONT></FONT>
+	</P>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>database.yaml</FONT></FONT></FONT></P>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>database.py</FONT></FONT></FONT></P>
+</UL>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>database.yaml
+for the database abstraction project is designed keeping relational
+SQL databases as primary focus. Relational database terminology is
+being used in api design.</FONT></FONT></FONT></P>
+<H2 CLASS="western" STYLE="font-style: normal; font-weight: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">3.2
+SQL and NoSQL at a glance:</FONT></FONT></FONT></H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Key
+points SQL database :</FONT></FONT></FONT></P>
+<UL>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Data
+	records are stored in a table in form of rows and columns.</FONT></FONT></FONT></P>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A
+	set of tables makes up a schema</FONT></FONT></FONT></P>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>A
+	number of schemas create a database</FONT></FONT></FONT></P>
+	<LI><P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Many
+	databases can be created on a single server</FONT></FONT></FONT></P>
+</UL>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>SQL
+and NoSQL terminologies: </FONT></FONT></FONT>
+</P>
+<DL>
+	<DD>
+	<TABLE WIDTH=613 BORDER=1 BORDERCOLOR="#000000" CELLPADDING=6 CELLSPACING=0>
+		<COL WIDTH=297>
+		<COL WIDTH=290>
+		<TR VALIGN=TOP>
+			<TD WIDTH=297>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>SQL Database</B></FONT></FONT></P>
+			</TD>
+			<TD WIDTH=290>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>NoSQL Database </B></FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=297>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Database </FONT></FONT>
+				</P>
+			</TD>
+			<TD WIDTH=290>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Database </FONT></FONT>
+				</P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=297>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Table</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=290>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Collection</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=297>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Row</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=290>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Document</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=297>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Column</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=290>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Field</FONT></FONT></P>
+			</TD>
+		</TR>
+		<TR VALIGN=TOP>
+			<TD WIDTH=297>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Schema (Statically
+				typed)</FONT></FONT></P>
+			</TD>
+			<TD WIDTH=290>
+				<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Schema (dynamic or
+				flexible typed)</FONT></FONT></P>
+			</TD>
+		</TR>
+	</TABLE>
+</DL>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Example
+SQL and NoSQL databases:</FONT></FONT></FONT></P>
+<P STYLE="margin-left: 0.49in; font-style: normal; font-weight: normal">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>SQL:
+SQL Server, Oracle, MySQL, PostgreSQL, Maria DB, SAP Hana, Teradata
+etc.</FONT></FONT></FONT></P>
+<P STYLE="margin-left: 0.49in"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">NoSQL:
+MongoDB, CouchDB, Hbase, Cassandra DB , Oracle No SQL database etc.</SPAN></SPAN></FONT></FONT></FONT></P>
+<H2 CLASS="western" STYLE="font-style: normal; font-weight: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">3.3
+Database API specification:</FONT></FONT></FONT></H2>
+<H3 CLASS="western">3.3.1 Operation: Database level operations 
+</H3>
+<PRE><FONT FACE="Menlo"><FONT SIZE=3><FONT COLOR="#000080"><SPAN STYLE="font-style: normal"><B>/database</B></SPAN></FONT><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></PRE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=6 CELLSPACING=0>
+	<COL WIDTH=42*>
+	<COL WIDTH=18*>
+	<COL WIDTH=81*>
+	<COL WIDTH=88*>
+	<COL WIDTH=27*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Capability</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=7%>
+			<P STYLE="font-style: normal"><FONT COLOR="#032f62"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Spec</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>NIST
+			database.yaml feature </B></FONT></FONT>
+			</P>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><FONT COLOR="#22863a"><SPAN STYLE="font-style: normal">current
+			version</SPAN></FONT><FONT COLOR="#24292e"><SPAN STYLE="font-style: normal">:
+			</SPAN></FONT><FONT COLOR="#032f62"><SPAN STYLE="font-style: normal">3.2.0</SPAN></FONT></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Project
+			database.yaml</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=10%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>New/ Change</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to return the list of all databases available in a </FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">database instance</FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=7%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>get</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: cloudmesh.database.get</FONT></FONT></FONT></PRE><P>
+			<BR>
+			</P>
+		</TD>
+		<TD WIDTH=34%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: cloudmesh.database.get</FONT></FONT></FONT></PRE><P>
+			<BR>
+			</P>
+		</TD>
+		<TD WIDTH=10%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">No Change</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="font-style: normal; font-weight: normal"><BR><BR>
+</P>
+<H3 CLASS="western">3.3.2 Operation: Schema level operations</H3>
+<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=3><FONT COLOR="#000080"><SPAN STYLE="font-style: normal"><B>/database/{name}/schema</B></SPAN></FONT><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></FONT></PRE><P STYLE="font-style: normal; font-weight: normal">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Possible
+bug in defining operation ID get.schema , put.schema, delete</FONT></FONT></FONT></P>
+<PRE STYLE="font-style: normal"><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=3><B>/database/{dbname}/schema/{schname}:</B></FONT></FONT></FONT>
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Schema name parameter is  introduced to give user and option to query on specific schema by passing the name as path parameter</FONT></FONT></FONT></PRE>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=6 CELLSPACING=0>
+	<COL WIDTH=42*>
+	<COL WIDTH=18*>
+	<COL WIDTH=82*>
+	<COL WIDTH=88*>
+	<COL WIDTH=27*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Capability</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=7%>
+			<P STYLE="font-style: normal"><FONT COLOR="#032f62"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Spec</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>NIST
+			database.yaml feature </B></FONT></FONT>
+			</P>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><FONT COLOR="#22863a"><SPAN STYLE="font-style: normal">current
+			version</SPAN></FONT><FONT COLOR="#24292e"><SPAN STYLE="font-style: normal">:
+			</SPAN></FONT><FONT COLOR="#032f62"><SPAN STYLE="font-style: normal">3.2.0</SPAN></FONT></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=34%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Project
+			database.yaml update/ change</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=10%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>New/ Change</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to return the list of all schemas  available in a </FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">database </FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=7%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>get</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>/database/{name}/schema</B></FONT>:</FONT></FONT></FONT>
+<FONT COLOR="#000000"> </FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.get.schema&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=34%>
+			<PRE><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>/database/{name}/schema{name}:</B></FONT></FONT></FONT>
+
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.get_schema&quot;</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>parameters</B></FONT>:</FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">- <FONT COLOR="#000080"><B>name</B></FONT>: schname</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>description</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: Name of the   schema</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>in</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: path</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>required</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: false</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>schema</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">    </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>type</B></FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: string</FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=10%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Change</FONT></FONT></FONT>
+
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">in :path parameter added to allow  schema name</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to create a schemas in a </FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">database</FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=7%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>put</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.put.schema&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=34%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.put_schema&quot;</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>parameters</B></FONT><FONT COLOR="#008000"><B>:</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">- <FONT COLOR="#000080"><B>name</B></FONT>: schname</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>description</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: Name of the schema</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>in</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: path</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>required</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: true</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>schema</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>type</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: string</FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=10%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Change</FONT></FONT></FONT>
+
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">in :path parameter added to allow  schema name</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=16%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to delete a schemas in a </FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">database</FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=7%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>delete</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: cloudmesh.database.delete</FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=34%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: cloudmesh.database.delete_schema</FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>parameters</B></FONT><FONT COLOR="#008000"><B>:</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">- <FONT COLOR="#000080"><B>name</B></FONT>: schname</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>description</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: Name of the schema</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>in</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: path</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>required</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: true</FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>schema</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>type</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: string</FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=10%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Change</FONT></FONT></FONT>
+
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">in :path parameter added to allow  schema name</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="font-style: normal; font-weight: normal"><BR><BR>
+</P>
+<H3 CLASS="western">3.3.3 Operation: Table level operations</H3>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=3><FONT COLOR="#000080"><FONT FACE="Menlo"><SPAN STYLE="font-style: normal"><B>/database/{dbname}/schema/{schname}/table/{tblname}</B></SPAN></FONT></FONT><FONT COLOR="#292b2c"><FONT FACE="Menlo"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>This
+is introduced to do table level operations like adding a table ,
+removing a table and getting a table list or table name validation of
+exists </FONT></FONT></FONT>
+</P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=6 CELLSPACING=0>
+	<COL WIDTH=42*>
+	<COL WIDTH=25*>
+	<COL WIDTH=76*>
+	<COL WIDTH=85*>
+	<COL WIDTH=27*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Capability</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=10%>
+			<P STYLE="font-style: normal"><FONT COLOR="#032f62"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Spec</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=30%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>NIST
+			database.yaml feature </B></FONT></FONT>
+			</P>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><FONT COLOR="#22863a"><SPAN STYLE="font-style: normal">current
+			version</SPAN></FONT><FONT COLOR="#24292e"><SPAN STYLE="font-style: normal">:
+			</SPAN></FONT><FONT COLOR="#032f62"><SPAN STYLE="font-style: normal">3.2.0</SPAN></FONT></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=33%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Project
+			database.yaml update/ change</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=11%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>New/ Change</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to return the list of all tables available in a </FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">database schema</FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=10%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>get</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=30%>
+			<PRE></PRE>
+		</TD>
+		<TD WIDTH=33%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.get_table&quot;</B></FONT></FONT></FONT></FONT></PRE><P>
+			<BR>
+			</P>
+		</TD>
+		<TD WIDTH=11%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">New</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to create a table in a database  schemas </FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=10%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>put</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=30%>
+			<PRE></PRE>
+		</TD>
+		<TD WIDTH=33%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.put_table&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=11%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">New</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to delete a table in a database  </FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=10%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>delete</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=30%>
+			<PRE></PRE>
+		</TD>
+		<TD WIDTH=33%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.delete_table&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=11%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">New</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="font-style: normal; font-weight: normal"><BR><BR>
+</P>
+<H3 CLASS="western">3.3.4 Operation: Table data operations</H3>
+<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=3><FONT COLOR="#000080"><SPAN STYLE="font-style: normal"><B>/database/{name}</B></SPAN></FONT><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></FONT></PRE><P STYLE="font-style: normal; font-weight: normal">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>There
+is a possible bug in defining operation ID as data.get , data.put and
+data.delete</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Specification
+does not specify from which collection/ table data to be pulled or
+add or delete </FONT></FONT></FONT>
+</P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=3><FONT COLOR="#000080"><FONT FACE="Menlo"><SPAN STYLE="font-style: normal"><B>/database{dbname}/schema/{schname}/data{tblname}</B></SPAN></FONT></FONT><FONT COLOR="#292b2c"><FONT FACE="Menlo"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></FONT></P>
+<TABLE WIDTH=100% BORDER=1 BORDERCOLOR="#000000" CELLPADDING=6 CELLSPACING=0>
+	<COL WIDTH=42*>
+	<COL WIDTH=19*>
+	<COL WIDTH=82*>
+	<COL WIDTH=85*>
+	<COL WIDTH=27*>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Capability</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=8%>
+			<P STYLE="font-style: normal"><FONT COLOR="#032f62"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Spec</B></FONT></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>NIST
+			database.yaml feature </B></FONT></FONT>
+			</P>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B><FONT COLOR="#22863a"><SPAN STYLE="font-style: normal">current
+			version</SPAN></FONT><FONT COLOR="#24292e"><SPAN STYLE="font-style: normal">:
+			</SPAN></FONT><FONT COLOR="#032f62"><SPAN STYLE="font-style: normal">3.2.0</SPAN></FONT></B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=33%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>Project
+			database.yaml update/ change</B></FONT></FONT></P>
+		</TD>
+		<TD WIDTH=11%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2><B>New/ Change</B></FONT></FONT></P>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to return the list of all tables available in a </FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">database schema</FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=8%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>get</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.data.get&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=33%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.data_get&quot;</B></FONT></FONT></FONT></FONT>
+</PRE><P>
+			<BR>
+			</P>
+		</TD>
+		<TD WIDTH=11%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Change</FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">&amp;</FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">New functionality added</FONT></FONT></FONT></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to create a table in a database  schemas </FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=8%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>put</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.data.put&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=33%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.data_put&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=11%>
+			<PRE></PRE>
+		</TD>
+	</TR>
+	<TR VALIGN=TOP>
+		<TD WIDTH=17%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">Ability to delete a table in a database  </FONT></FONT></FONT></PRE>
+		</TD>
+		<TD WIDTH=8%>
+			<P><FONT FACE="Arial, sans-serif"><FONT SIZE=2>delete</FONT></FONT></P>
+		</TD>
+		<TD WIDTH=32%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.data.delete&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=33%>
+			<PRE><FONT COLOR="#000000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><FONT COLOR="#000080"><B>operationId</B></FONT>: <FONT COLOR="#008000"><B>&quot;cloudmesh.database.data_delete&quot;</B></FONT></FONT></FONT></FONT>
+</PRE>
+		</TD>
+		<TD WIDTH=11%>
+			<PRE></PRE>
+		</TD>
+	</TR>
+</TABLE>
+<P STYLE="font-style: normal; font-weight: normal"><BR><BR>
+</P>
+<H2 CLASS="western" STYLE="font-style: normal; font-weight: normal; page-break-after: avoid">
+<FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt">3.4
+Cloudmesh Impacted Script and Changes :</FONT></FONT></FONT></H2>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>Following
+scripts in cloudmesh config are updated as part of this projection</FONT></FONT></FONT></P>
+<OL>
+	<LI><PRE STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif">cloudmesh.yaml</FONT></FONT>
+
+<A HREF="https://github.com/cloudmesh/cloudmesh-configuration/commits/master/cloudmesh/configuration/etc/cloudmesh.yaml"><FONT COLOR="#000080"><FONT FACE="Arial, sans-serif"><SPAN LANG="zxx"><SPAN STYLE="font-style: normal"><U><SPAN STYLE="font-weight: normal">https://github.com/cloudmesh/cloudmesh-configuration/commits/master/cloudmesh/configuration/etc/cloudmesh.yaml</SPAN></U></SPAN></SPAN></FONT></FONT></A></PRE>
+</OL>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>	</FONT></FONT></FONT></P>
+<P STYLE="font-style: normal; font-weight: normal"><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2>	Database
+ section  added :</FONT></FONT></FONT></P>
+<PRE><FONT COLOR="#000000"><FONT COLOR="#292b2c"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">	</SPAN></SPAN></FONT></FONT></FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><B>database</B></SPAN></FONT></FONT></FONT><FONT COLOR="#292b2c"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">:</SPAN></SPAN></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000">  <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>aws</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>cm</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>active</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: false</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>heading</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: homedir</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>host</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: aws.com</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>label</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: home-dir</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>kind</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: awssql</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>version</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>service</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: database</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>default</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>directory</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>credentials</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>server</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD.us-east-2.rds.amazonaws.com</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>database</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>username</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>password</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000">      <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>driver</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: </FONT></FONT><FONT COLOR="#008000"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>'{ODBC Driver 17 for SQL Server}'</B></FONT></FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT COLOR="#008000">      </FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>name</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">: TBD</FONT></FONT></FONT>
+<FONT COLOR="#000000"><FONT COLOR="#292b2c">   </FONT></FONT>
+
+<FONT COLOR="#000000"><FONT COLOR="#292b2c"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">	2</SPAN></SPAN></FONT></FONT></FONT><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">. Config.py</SPAN></SPAN></FONT></FONT></FONT></FONT>
+
+<FONT COLOR="#000000"><A HREF="https://github.com/cloudmesh/cloudmesh-configuration/blob/master/cloudmesh/configuration/Config.py"><FONT FACE="Arial, sans-serif">https://github.com/cloudmesh/cloudmesh-configuration/blob/master/cloudmesh/configuration/Config.py</FONT></A><FONT COLOR="#292b2c"><FONT FACE="Arial, sans-serif"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"> </SPAN></SPAN></FONT></FONT></FONT></FONT></PRE><P STYLE="font-style: normal; font-weight: normal">
+<FONT COLOR="#292b2c"> <FONT FACE="Arial, sans-serif"><FONT SIZE=3>	</FONT></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=3><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">	</SPAN></SPAN></FONT><FONT COLOR="#292b2c"><FONT SIZE=2><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">Update
+in following section</SPAN></SPAN></FONT></FONT></FONT></FONT></P>
+<P><FONT FACE="Arial, sans-serif"><FONT SIZE=3><FONT COLOR="#292b2c"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">	</SPAN></SPAN></FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><B>for
+</B></SPAN></FONT></FONT></FONT><FONT COLOR="#292b2c"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">variable
+</SPAN></SPAN></FONT></FONT></FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><B>in
+</B></SPAN></FONT></FONT></FONT><FONT COLOR="#292b2c"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">variables:</SPAN></SPAN></FONT></FONT></FONT></FONT></FONT></P>
+<PRE STYLE="background: #ffffff"><FONT COLOR="#000000">    <FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">text = variable</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">variable = variable[</FONT></FONT><FONT COLOR="#0000ff"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">1</FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:-</FONT></FONT><FONT COLOR="#0000ff"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">1</FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">]</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>try</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">        <FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">value = </FONT></FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">eval</FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">(</FONT></FONT><FONT COLOR="#008080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>&quot;m.{variable}&quot;</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">.format(**</FONT></FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">locals</FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">()))</FONT></FONT></FONT>
+<FONT COLOR="#000000">        <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>if </B></FONT></FONT></FONT><FONT COLOR="#008080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>&quot;{&quot; </B></FONT></FONT></FONT><FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>not in </B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">value:</FONT></FONT></FONT>
+<FONT COLOR="#000000">            <FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">spec = spec.replace(text, value)</FONT></FONT></FONT>
+<FONT COLOR="#000000">    <FONT COLOR="#000080"><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt"><B>except</B></FONT></FONT></FONT><FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">:</FONT></FONT></FONT>
+<FONT COLOR="#000000">        <FONT FACE="Menlo"><FONT SIZE=2 STYLE="font-size: 9pt">value = variable</FONT></FONT></FONT></PRE><P STYLE="font-style: normal; font-weight: normal">
+<BR><BR>
+</P>
+<P STYLE="font-style: normal; font-weight: normal"><BR><BR>
+</P>
+<P STYLE="font-style: normal; font-weight: normal"><BR><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+</BODY>
+</HTML>
