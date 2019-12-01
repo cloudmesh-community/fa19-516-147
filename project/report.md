@@ -54,19 +54,19 @@ Here is a quick reference table giving the listing of database services availabl
 
  * Cloudmesh
  
-   Cloudmesh is a multicloud architecture system which offers single architecture for using multiple cloud provides at the      same time. Adbvantage of using cloudmesh is that it not only provides a REST based API but also commandline shell which      makes easier to switch between clouds using single variable.
+   Cloudmesh is a multicloud architecture system which offers single architecture for using multiple cloud provides at the same time. Adbvantage of using cloudmesh is that it not only provides a REST based API but also commandline shell which makes easier to switch between clouds using single variable.
    
- * REST / Open API
+ * Open API 3.0.2
  
-   APIs are sets of requirements that govern how one application can communicate and interact with another. connexion Open      API 3 will be used in this project
+   APIs are sets of requirements that govern how one application can communicate and interact with another. connexion Open API 3 will be used in this project
    
  * Python Scripting
  
-   Python is a most popupar programming language which provides vast variety of libraries. Python can be used for developing    web, desktop, scientific or any other application. Python will be used as scripting language in this project. 
+   Python is a most popular programming language which provides vast variety of libraries. Python can be used for developing web, desktop, scientific or any other application. Python will be used as scripting language in this project. 
    
- * AWS Redshift/ RDS  & Azure SQL Database
+ * AWS RDS SQL Server Express Edition & Azure SQL Database
  
-   AWS and Azure are two market leading cloud services provider from Amazon and Microsoft respectively. AWS and Azure both      offer number of database services. In project, relation SQL database from these cloud providers will be used. 
+   AWS and Azure are two market leading cloud services provider from Amazon and Microsoft respectively. AWS and Azure both offer number of database services. In project, relation SQL database from these cloud providers will be used. 
 
 ## Implementation Plan 
 
