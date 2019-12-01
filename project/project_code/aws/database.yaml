@@ -28,7 +28,7 @@ paths:
       tags:
         - "Database Registry"
       summary: Returns all databases
-      description: Returns all databases
+      description: Returns name of all databases availble in database instance
       operationId: cloudmesh.database.get
       responses:
         '200':
@@ -43,23 +43,77 @@ paths:
           description: Not authorized
         '404':
           description: Named database not found
-  /database/{name}/schema:
-    get:
+    put:
       tags:
-      - "Database Schema"
-      summary: Get the list of the schema
-      description: ""
-      operationId: "cloudmesh.database.get_schema"
+        - "Database Registry"
+      summary: "Create database"
+      description: "Create a database in a Database instance"
+      operationId: cloudmesh.database.put
       parameters:
-        - name: name
-          description: Name of the schema
+        - name: dbname
+          description: Name of the database
           in: path
           required: true
           schema:
             type: string
       responses:
         '200':
-          description: "successfully returned the schema"
+          description: "Database successfully created"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+        - "Database Registry"
+      summary: "Delete a database from a database instance"
+      description: ""
+      operationId: cloudmesh.database.delete
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Database successfully deleted"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+  /database/{dbname}/schema/{schname}:
+    get:
+      tags:
+      - "Database Schema"
+      summary: Get the list of the schemas in a database
+      description: ""
+      operationId: "cloudmesh.database.get_schema"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: schname
+          description: Name of the schema
+          in: path
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully returned the schema list"
           content:
             application/json:
               schema:
@@ -69,16 +123,22 @@ paths:
         '401':
           description: Not authorized
         '404':
-          description: Named database not found
+          description: Named Schema not found
     put:
       tags:
       - "Database Schema"
-      summary: "Upload  a schema"
+      summary: "Create a schema in a database"
       description: ""
-      operationId: "cloudmesh.database.put.schema"
+      operationId: "cloudmesh.database.put_schema"
       parameters:
-        - name: name
-          description: Name of the database
+        - name: dbname
+          description: Name of the schema
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: schname
+          description: Name of the schema
           in: path
           required: true
           schema:
@@ -96,13 +156,19 @@ paths:
           description: Named database not found
     delete:
       tags:
-        - "Database Registry"
-      summary: Deletes a database from the list of databases
-      description: Deletes a database from the list of databases
-      operationId: cloudmesh.database.delete
+        - "Database Schema"
+      summary: Deletes a schema from the list of databases schemas
+      description: Deletes a schema from the list of databases schemas
+      operationId: cloudmesh.database.delete_schema
       parameters:
-        - name: name
-          description: Name of the database
+        - name: dbname
+          description: Name of the schema
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: schname
+          description: Name of the schema
           in: path
           required: true
           schema:
@@ -113,34 +179,40 @@ paths:
         '401':
           description: Not authorized
         '404':
-          description: Named database not found
-  /database/{name}:
+          description: Named schema not found
+  /database{dbname}/schema/{schname}/data{tblname}:
     get:
       tags:
-      - "Database Data"
+      - "Database Table Data"
       summary: Query the named database
       description: Query the named database
-      operationId: "cloudmesh.database.data.get"
+      operationId: "cloudmesh.database.data_get"
       parameters:
-        - name: name
+        - name: dbname
           description: Name of the database
           in: path
           required: true
           schema:
             type: string
-        - in: query
-          name: query
+        - name: schname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: tblname
           description: Database Query
           required: true
           schema:
-            $ref: '#/components/schemas/Query'
+            type: string
       responses:
         '200':
           description: Successfull query
           content:
             application/json:
               schema:
-                type: array
+                type: string
                 items:
                   $ref: "#/components/schemas/Record"
         '401':
@@ -149,13 +221,25 @@ paths:
           description: Named database not found
     put:
       tags:
-      - "Database Data"
+      - "Database Table Data"
       summary: "add data to the table or collection"
       description: ""
-      operationId: "cloudmesh.database.data.put"
+      operationId: "cloudmesh.database.data_put"
       parameters:
-        - name: name
+        - name: dbname
           description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: schname
+          description: Name of the schema
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tblname
+          description: "Database query"
           in: path
           required: true
           schema:
@@ -173,28 +257,40 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Record"
+                type: string
         '401':
           description: Not authorized
         '404':
-          description: Named database not found
+          description: Named database not founjsond
     delete:
       tags:
-      - "Database Data"
+      - "Database Table Data"
       summary: "Delete the objects matching the query"
       description: ""
-      operationId: "cloudmesh.database.data.delete"
+      operationId: "cloudmesh.database.data_delete"
       parameters:
-        - name: name
+        - name: dbname
           description: Name of the database
           in: path
           required: true
           schema:
             type: string
-        - name: query
-          description: Database Query
-          in: query
+        - name: schname
+          description: Name of the database schema
+          in: path
           required: true
+          schema:
+            type: string
+        - name: tblname
+          description: Database table
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: query
+          description: value to be deleted
+          in: query
+          required: false
           schema:
             $ref: '#/components/schemas/Query'
       responses:
@@ -210,6 +306,113 @@ paths:
           description: Not authorized
         '404':
           description: Named database not found
+  /database/{dbname}/schema/{schname}/table/{tblname}:
+    get:
+      tags:
+        - "Database Table"
+      summary: Get the list of the columns in a tables
+      description: ""
+      operationId: "cloudmesh.database.get_table"
+      parameters:
+        - name: dbname
+          description: "Enter name of the database"
+          in: path
+          required: true
+          schema:
+           type: string
+        - name: schname
+          description: "Enter name of the schema"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tblname
+          description: "Enter name of the table"
+          in: path
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully returned the tables"
+          content:
+            application/json:
+              schema:
+                type: string
+                items:
+                  $ref: "#/components/schemas/Table"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+        - "Database Table"
+      summary: "Create  a table in a required schema"
+      description: ""
+      operationId: "cloudmesh.database.put_table"
+      parameters:
+        - name: dbname
+          description: "Enter name of the database where table to be created"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: schname
+          description: "Enter name of the schema where table to be created"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tblname
+          description: "Enter name of the table to be created along with structure ex. <tablename>(<col1 <datatype> , <col2 <datatype> , ..,...)"
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully table created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Table"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+        - "Database Table"
+      summary: Deletes a table from a given database schema
+      description: Deletes a table from a given database schema
+      operationId: "cloudmesh.database.delete_table"
+      parameters:
+        - name: dbname
+          description: "Enter name of the database from which table to be deleted"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: schname
+          description: "Enter name of the database schema from which table to be deleted"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tblname
+          description: "Enter name of the table which to be deleted/ dropped"
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Table Deletion successful"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named table not found
 components:
   schemas:
     Database:
@@ -230,14 +433,14 @@ components:
           description: the kind of the database
     Schema:
       type: object
-      description: Defines a database
+      description: Defines a database schema
       properties:
         name:
           type: string
-          description: Name of the database
+          description: Name of the database schema
         description:
           type: string
-          description: Description of the database
+          description: Description of the database schema
         kind:
           type: string
           description: The kind of the definition
@@ -248,16 +451,28 @@ components:
       type: object
       description: The result of a query
       properties:
-        status:
-          type: string
+        col1:
+          type: integer
           description: The status of the reurn
-        result:
+        col2:
           type: string
-          description: The result of the quesry in json string format
+          description: The result of the query in json string format
+        col3:
+          type: string
+          description: The result of the query in json string format
     Query:
       type: object
       description: The  query
       properties:
-        status:
+        col1:
+          type: string
+        val1:
           type: string
           description: The query string
+    Table:
+      type: object
+      description: The  table
+      properties:
+        status:
+          type: string
+          description: Table
