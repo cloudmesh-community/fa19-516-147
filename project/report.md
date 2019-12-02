@@ -93,7 +93,7 @@ Three main components of database service are :
         
    database.yaml
 
-#### 2.1 API Specification database.yaml
+#### API Specification database.yaml
 
 NIST API template database.yaml for this database abstraction project is enhanced keeping relational SQL databases as main a focus. Relational database terminology is being used here and functions to performed database operations are  defined in a python file.
 
@@ -116,7 +116,7 @@ __*SQL and NoSQL terminologies*__ :
 
 
 
-##### 2.1.1 YAML File Path and Methods
+##### YAML File Path and Methods
 
 <u>Path: /database</u>
 
@@ -144,26 +144,33 @@ Changes area made in current version of NIST database.yaml template.
     NIST3.2.0: 
     ```
     /database/{dbname}/schema/  
+   
     ```
+   
     Updated as: 
+    
     ```
-    /database/{dbname}/schema/{schname}
-   ```
+     /database/{dbname}/schema/{schname}
+    ```
 
 1. Operation ID changed to correct the function call
     
     NIST3.2.0: 
+    
     ```
     "cloudmesh.database.get.schema" 
-   "cloudmesh.database.put.schema" 
-   "cloudmesh.database.delete"    
+    "cloudmesh.database.put.schema" 
+    "cloudmesh.database.delete" 
     ```
+    
     Updated as: 
+    
     ```
     "cloudmesh.database.get_schema" 
     "cloudmesh.database.put_schema" 
     "cloudmesh.database.delete_schema" 
     ```
+   
 <u> Path: /database/{dbname}/schema/{schname}/table/{tblname} </u>
 
 This path is a new addition to the current NIST template. This is introduced to perform following table level operations:
@@ -173,10 +180,13 @@ This path is a new addition to the current NIST template. This is introduced to 
  * delete a named table in a database schema
  
      NIST3.2.0: 
+     
     ```
     not available  
     ```
+   
     Updated as: 
+    
     ```
     "cloudmesh.database.get_table" 
     "cloudmesh.database.put_table" 
@@ -197,10 +207,13 @@ This path is a new addition to the current NIST template. This is introduced to 
    *    delete records from a table in a named schema in a database
    
     NIST3.2.0: 
+    
     ```
     /database/{dbname}/ 
     ```
+   
     Updated as: 
+    
     ```
     /database/{dbname}/schema/{schname}/table/{tblname}/data
    ```
@@ -214,6 +227,7 @@ This path is a new addition to the current NIST template. This is introduced to 
    "cloudmesh.database.put.data" 
    "cloudmesh.database.delete.data"    
     ```
+   
     Updated as: 
     ```
     "cloudmesh.database.get_data" 
@@ -249,11 +263,11 @@ This path is a new addition to the current NIST template. This is introduced to 
 
 ### Step 3: Cloudmesh Configuration setup
  
-#### 3.1 Add database section for aws and azure in cloudmesh.yaml   
+#### Add database section for aws and azure in cloudmesh.yaml   
 
 Add database sections and introduce aws and azure config detail 
 
-#### 3.2 Update .cloudmesh.yaml on local install
+#### Update .cloudmesh.yaml on local install
 
  Add connection parameters
     
