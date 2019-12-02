@@ -228,10 +228,11 @@ This path is a new addition to the current NIST template. This is introduced to 
     Updated feature: 
   
     * pull data from table without limiting for only one predefined field
-    * current limit has been set as 10 records but can be changed based on implementation  
-    * data can be filter out for a given criteria based on a single field value
+    * flexibility to set a return row count limit , current limit has been set as 10 records but can be changed based on implementation  
+
+    Further Enhancements: 
     
-    **** this feature can be further enhanced to perform variety of data pull reuqests
+    **** this feature can be further enhanced to perform variety of data pull reuqests ,data can be filter out for a given criteria based on a single field value
    
  1. Modified put method to add data into table
  
@@ -242,7 +243,8 @@ This path is a new addition to the current NIST template. This is introduced to 
     *  flexibility to add data for multiple fields in a table (current limit is set as 7 up to columns in table)
     *  removed dependency on a field name , any fields from a table can be chosen to add data set (current limit is set as up to 7 columns in table)
     
-    **** this feature can further be enhanced to updated records based on a condition 
+    Further Enhancements:
+    **** this feature can further be enhanced to insert records from file  and also update feature can be added to update records based on a defined criteria 
 
 
 ### Step 3: Cloudmesh Configuration setup
