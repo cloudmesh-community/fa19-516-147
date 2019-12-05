@@ -36,9 +36,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/Database"
+                type: string
         '401':
           description: Not authorized
         '404':
@@ -106,7 +104,7 @@ paths:
           schema:
             type: string
         - name: schname
-          description: Name of the schema
+          description: Name of the schema , enter value ALL or enter schema name
           in: path
           required: false
           schema:
@@ -180,12 +178,12 @@ paths:
           description: Not authorized
         '404':
           description: Named schema not found
-  /database{dbname}/schema/{schname}/data{tblname}:
+  /database{dbname}/schema/{schname}/table/{tblname}/data:
     get:
       tags:
       - "Database Table Data"
-      summary: Query the named database
-      description: Query the named database
+      summary: Query the database schema table
+      description: Query the database schema table
       operationId: "cloudmesh.database.data_get"
       parameters:
         - name: dbname
@@ -265,7 +263,7 @@ paths:
     delete:
       tags:
       - "Database Table Data"
-      summary: "Delete the objects matching the query"
+      summary: "Delete the database objects matching the query"
       description: ""
       operationId: "cloudmesh.database.data_delete"
       parameters:
@@ -327,7 +325,7 @@ paths:
           schema:
             type: string
         - name: tblname
-          description: "Enter name of the table"
+          description: "Enter name of the table or type ALL to get list of tables"
           in: path
           required: false
           schema:
@@ -421,16 +419,7 @@ components:
       properties:
         name:
           type: string
-          description: Name of the database
-        description:
-          type: string
-          description: Description of the database
-        endpoint:
-          type: string
-          description: Endpoint of the database
-        kind:
-          type: string
-          description: the kind of the database
+          description: list of the databases
     Schema:
       type: object
       description: Defines a database schema
@@ -458,6 +447,18 @@ components:
           type: string
           description: The result of the query in json string format
         col3:
+          type: string
+          description: The result of the query in json string format
+        col4:
+          type: string
+          description: The result of the query in json string format
+        col5:
+          type: string
+          description: The result of the query in json string format
+        col6:
+          type: string
+          description: The result of the query in json string format
+        col7:
           type: string
           description: The result of the query in json string format
     Query:
