@@ -1,3 +1,7 @@
 flask
 connexion[swagger-ui]
-
+pyodbc
+collections
+argparse
+json
+yaml
