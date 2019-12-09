@@ -129,7 +129,7 @@ databases.
 
 Use NIST database.yaml template file from NIST git directory
 
-NIST database.yaml <https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml>
+[NIST database.yaml](https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml)
 
 * to get database , schema and DDL listing from one cloud environment
  (e.g Azure or AWS)
@@ -349,4 +349,4 @@ Add database sections and introduce aws and azure config detail
 1. Google Cloud Database Servcies <https://cloud.google.com/products/databases/?hl=pl>
 1. Oracle Cloud Database Services <https://www.oracle.com/database/cloud-services.html>
 1. IBM Cloud Database Services <https://www.ibm.com/cloud/databases>
-1. MongoDB Cloud Database Services <https://www.mongodb.com/cloud> 
+1. MongoDB Cloud Database Services <https://www.mongodb.com/cloud>
