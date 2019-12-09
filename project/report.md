@@ -4,6 +4,10 @@ Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-
 
 [Contributors](https://github.com/cloudmesh-community/fa19-516-147/graphs/contributors)
 
+[Insights](https://github.com/cloudmesh-community/fa19-516-147/pulse)
+ 
+[Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
+
 :o2: link to insights, code missing, see what others that have it do ...
 
 :o2: remove phrases such as in this project. Nist does not have projects
