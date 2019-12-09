@@ -61,8 +61,8 @@ because of the following main reasons:
 * can be scaled quickly and efficiently
 * mostly self-managed database with less administrative overhead
 
-In this cloud computing project, cloud database as a service feature
-will be used with the objective of creating a functionality to deploy a
+Cloud database as a service feature
+will be used here with the objective of creating a functionality to deploy a
 database in multiple cloud environment.
  
 Here is a quick reference table giving the listing of database services
@@ -90,14 +90,14 @@ available from different cloud services provider market leaders,
  
    APIs are sets of requirements that govern how one application can
    communicate and interact with another. connexion Open API 3 will be
-   used in this project
+   used.
    
  * Python Scripting
  
    Python is a most popular programming language which provides vast
    variety of libraries. Python can be used for developing web, desktop,
    scientific or any other application. Python will be used as scripting
-   language in this project.
+   language.
    
  * Cloud databases
    
