@@ -68,7 +68,13 @@ database in multiple cloud environment.
 Here is a quick reference table giving the listing of database services
 available from different cloud services provider market leaders,
 
+
+**List of Database Products from Popular Cloud Service Providers**
+
 ![](Cloud_Database_Product.png)
+
+**Comparison of Cloud Database**
+
 ![](Cloud_Database_Comparison.png)
 
 ## Architecture Diagram
