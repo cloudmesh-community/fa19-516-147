@@ -8,16 +8,6 @@ Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-
  
 [Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
 
-:o2: link to insights, code missing, see what others that have it do ...
-
-:o2: remove phrases such as in this project. Nist does not have projects
-
-:o2: please do not use html tags in text but only markdown
-
-:o2: figures have captions in markdown but not in image, see
-architecture image is wrong, image in motivation is wrong, this is not a
-presentation but a professional document
-
 
 ## Objective
 
@@ -140,8 +130,6 @@ Use NIST database.yaml template file from NIST git directory
 * to get database , schema and DDL listing from one cloud environment
  (e.g Azure or AWS)
 * to create/copy database schema and DDL in other cloud environment 
-    
-:o2: database.yaml
 
 
 #### API Specification database.yaml
