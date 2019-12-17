@@ -45,7 +45,7 @@ def _connect():
 # get database list, connect , disconnect a database                                    #
 #########################################################################################
 
-def get():
+def get(dbname):
     # con = pyodbc.connect(f'DRIVER={driver};SERVER={server}' + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     con = _connect()
     cur = con.cursor()
@@ -64,7 +64,8 @@ def get():
     return json.dumps(row_array)
 
 def put(dbname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+   # con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
     con.autocommit = True
     string = 'CREATE database ' + dbname
@@ -73,9 +74,12 @@ def put(dbname):
     con.close()
 
 def delete(dbname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
     con.autocommit = True
+    string1 = 'USE MASTER'
+    cur.execute(string1)
     string = 'DROP DATABASE ' + dbname
     cur.execute(string)
     cur.commit()
@@ -90,12 +94,13 @@ def delete(dbname):
 #########################################################################################
 
 def get_schema(dbname , schname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
     cur = con.cursor()
     string1 = 'USE ' + dbname
     cur.execute(string1)
   #  if schname.upper() == 'ALL' or (len(schname) == 0):
-    if schname.upper() == 'ALL' or []:
+    if (schname.upper() == 'ALL') or (len(schname) == 0):
         string = "select name from sys.schemas"
     else:
         string = "SELECT name FROM sys.schemas where name = '""" + schname + "'"
@@ -112,25 +117,22 @@ def get_schema(dbname , schname):
     return json.dumps(row_array)
 
 # ****** Function to create a schema in a database , database name is a input parameter for this function ******
-
-
 def put_schema(dbname, schname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
     cur = con.cursor()
    # string = 'CREATE SCHEMA {0}.{1}'.format(dbname,schname)
     string1 = 'USE ' + dbname
     cur.execute(string1)
     string2 = 'CREATE SCHEMA ' + schname
-    #print(string)
     cur.execute(string2)
     cur.commit()
     con.close()
 
 # ****** Function to delete schema from database *******
-
-
 def delete_schema(dbname, schname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+   # con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
     string1 = 'USE ' + dbname
     cur.execute(string1)
@@ -147,9 +149,11 @@ def delete_schema(dbname, schname):
 
 
 def get_table(dbname, schname ,tblname):
-
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
+    string1 = 'USE ' + dbname
+    cur.execute(string1)
    # string = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '""" + tblname + """'  AND TABLE_SCHEMA = '""" + name + "'"
    # string = "SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG = '""" + schname + """'  AND TABLE_SCHEMA = '""" + tblname + "'"
     string = "SELECT TABLE_NAME FROM """ + dbname + """.INFORMATION_SCHEMA.TABLES WHERE TABLE_CATALOG = '""" + dbname + """'  AND TABLE_SCHEMA = '""" + schname + "'"
@@ -169,8 +173,11 @@ def get_table(dbname, schname ,tblname):
 
 
 def put_table(dbname, schname, tblname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
     cur = con.cursor()
+    string1 = 'USE ' + dbname
+    cur.execute(string1)
   #  string = 'CREATE table ' + name.tblname
     string ='create table {0}.{1}.{2}'.format(dbname,schname, tblname)
     cur.execute(string)
@@ -181,8 +188,11 @@ def put_table(dbname, schname, tblname):
 
 
 def delete_table(dbname, schname, tblname):
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
     cur = con.cursor()
+    string1 = 'USE ' + dbname
+    cur.execute(string1)
     string = 'drop table {0}.{1}.{2}'.format(dbname, schname,  tblname)
     cur.execute(string)
     cur.commit()
@@ -197,9 +207,8 @@ def delete_table(dbname, schname, tblname):
 
 
 def data_get_old(dbname , schname, tblname):
-
-    con = pyodbc.connect(
-        'DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+   # con = pyodbc.connect( 'DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
     string = 'select * from  {0}. {1}. {2}'.format(dbname, schname,  tblname)
     query_out = cur.execute(string)
@@ -216,8 +225,11 @@ def data_get_old(dbname , schname, tblname):
 def data_get(dbname ,schname , tblname):
     #outfile = open(tblname.json, 'w')
     objects_list = []
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+    # con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
+    string1 = 'USE ' + dbname
+    cur.execute(string1)
     string = 'select * from  {0}. {1}. {2}'.format(dbname, schname,  tblname)
     cur.execute(string)
     columns = [i[0] for i in cur.description]
@@ -259,8 +271,8 @@ def data_put(dbname , schname , tblname):
     #    pass
     #print(f.status)
     #print(f.reason)
-
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+   # con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
     data_dict = request.json
     string = 'insert into  {0}.{1}.{2}'.format(dbname, schname, tblname)
@@ -288,7 +300,8 @@ def data_delete(dbname , schname, tblname):
      query_param = request.args
      col1 = query_param.get('col1')
      val1 = query_param.get('val1')
-     con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+     con = _connect()
+    # con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
      cur = con.cursor()
      string = f'delete from {dbname}.{schname}.{tblname}'
 #  string = 'delete from {0}.{1}.{2}'.format(dbname, schname, tblname) where '"" + col1 + ""' = '"" + val1 + ""1
@@ -299,7 +312,8 @@ def data_delete(dbname , schname, tblname):
 
 def data_get_file(outfileName , query):
     outfile = open(outfileName, 'w')
-    con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+    con = _connect()
+    #con = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
     cur = con.cursor()
     string = query
     cur.execute(string)
