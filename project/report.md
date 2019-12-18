@@ -7,6 +7,8 @@ Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-
 * [Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
 
 :o2: fix some markdown quote errors
+:o2: remove the progress section and integrate findings into main text
+:o2: list limitations if you have not achieved everything
 
 ## Objective
 
