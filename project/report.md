@@ -6,10 +6,6 @@ Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-
 * [Insights](https://github.com/cloudmesh-community/fa19-516-147/pulse)
 * [Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
 
-:o2: fix some markdown quote errors
-:o2: remove the progress section and integrate findings into main text
-:o2: list limitations if you have not achieved everything
-
 ## Objective
 
 Abstract database management on Multicloud environments for the NIST Big
@@ -318,18 +314,8 @@ Add database sections and introduce aws and azure config detail
 
 #### Update .cloudmesh.yaml on local install
 
- Add connection parameters
+Add connection parameters
     
-## Progress
-
-* Azure account created
-* A database created on Azure SQL Database
-* Docker setup on local
-* Python script to test connection to databse and deploy table
-* AWS account creation
-* Code directory & file structure set up complete
-* Database.py created for get ,set Db and Schema
-* Database.py tested for get ,set Db and Schema
 
 ## References
 
