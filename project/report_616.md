@@ -2,8 +2,7 @@
 
 ## Objective
 
-Abstract database management on NoSQL environments for the NIST Big
-Data Reference Architecture and introduce new database opeartion feature in abstract databse management for SQL and NoSQL
+Abstract database management on NoSQL environments for the NIST Big Data Reference Architecture and introduce new feature for database opeartions in abstract databse management using SQL and NoSQL databases.
 
 ## Introduction
 
