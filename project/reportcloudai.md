@@ -16,7 +16,7 @@ Azure offers AI services through Azure Cognitive services which include APIs, SD
 
 ### Microsoft Azure Machine Learning Studio
 
-This is UI based environment to develop machine learning application with no or low use of code.
+This is UI based environment to develop machine learning application with no or low use of code. Azure Studio has a drag and drop UI feature to help user to built machine learning application without getting into coding complexity.
 
 ### Azure Machine Learning SDK for Python
 
@@ -63,4 +63,7 @@ pip install oml4py
 1. Azure Cognitive Services <https://docs.microsoft.com/en-us/azure/cognitive-services/welcome>
 1. Azure AI SDK <https://docs.microsoft.com/en-us/python/api/overview/azureml-sdk/install?view=azure-ml-py>
 1. Sentiment Analysis with Azure AI <https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/quickstarts/text-analytics-sdk?pivots=programming-language-python&tabs=version-3#sentiment-analysis>
+1. Azure AI Documentaion <https://docs.microsoft.com/en-us/azure/machine-learning/>
 1. OML4PY <https://towardsdatascience.com/oracle-machine-learning-for-python-e335fc0a50e8>
+1. Oracle AI API Architecture <https://docs.oracle.com/en/solutions/connect-your-bot-to-ml-api/index.html#GUID-FA624926-1883-467C-A08D-6588D329B95C>
+1. Oracle Machine Learning for Python <https://towardsdatascience.com/oracle-machine-learning-for-python-e335fc0a50e8>
