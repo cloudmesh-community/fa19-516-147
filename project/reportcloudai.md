@@ -44,6 +44,8 @@ Complete detail on Installation & Packages <https://docs.microsoft.com/en-us/pyt
 
 ### Azure AI APIs
 
+Azure Cognitive Services APIs are categorized into five main categories - Vision, Speech, Language, Web Search, and Decision. These APIs are a cloud-based service that provides advanced machine learning processing
+
 <https://docs.microsoft.com/en-us/azure/cognitive-services/welcome>
 
 Example using Azure AI API with Python 
@@ -53,10 +55,15 @@ Example using Azure AI API with Python
 
 ### Oracle Machine Learning for Python
 
-Oracle offers machine learning function in the database.
 Oracle machine learning for python called as OML4PY is a part of Oracle Advanced Analytics option which introduces automated model selection via hyperparameter tuning and automated feature selection to enhance model accuracy and performance.
+Oracle offers machine learning function in the database which means it connects the Python object to the DB table and all the subsequent invocations on the OML DataFrame object get translated in SQL instructions executed inside the DB.
+
+OML4Py is available through a Python module (oml) based on cx_Oracle.
 
 pip install oml4py
+
+As per mentioned on oracle site,this is coming soon 
+<https://www.oracle.com/database/technologies/datawarehouse-bigdata/machine-learning.html>
 
 ## References
 
