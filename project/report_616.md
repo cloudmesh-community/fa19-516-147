@@ -1,5 +1,11 @@
 # Abstract Database Management On NoSQL Environments
 
+Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-147/edit/master/project/report_616.md)
+
+* [Contributors](https://github.com/cloudmesh-community/fa19-516-147/graphs/contributors)
+* [Insights](https://github.com/cloudmesh-community/fa19-516-147/pulse)
+* [Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
+
 ## Objective
 
 Abstract database management on NoSQL environments for the NIST Big Data Reference Architecture and introduce new feature for database opeartions in abstract database management using SQL and NoSQL databases.
@@ -36,7 +42,7 @@ Use NIST database.yaml template file from NIST git directory
 
 [NIST database.yaml](https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml)
 
-#### API Specification database.yaml
+#### API Specification database_noSQL.yaml
 
 NIST API template database.yaml for this database abstraction project is
 enhanced keeping no SQL databases as main a focus. 
@@ -58,15 +64,23 @@ Key points to keep in mind while working with no SQL databases:
 
 ##### YAML File Path and Methods
 
-Path: /database
+Path: /database/{dbname}:
+
+This path perform following database level operations:
 
 * get
 * put 
 * delete
 
+   ```
+   cloudmesh.database.get
+   cloudmesh.database.put
+   cloudmesh.database.delete
+   ```
+
 Path: /database/{dbname}/collection/{collname}
 
-This path is a new addition to the current NIST template. This is introduced to perform following table level operations:
+This path is introduced to perform following collection level operations:
  
  * search a named collection in a database schema or list all collections in the database 
  * create a named collection in a database schema
@@ -80,15 +94,31 @@ This path is a new addition to the current NIST template. This is introduced to 
    
 Path: /database/{dbname}/collection/{collname}/data
 
+This path performs following collection data level operations:
 
 * get
 * put
 * delete
 * post
 
+   ```
+   cloudmesh.database.get_data
+   cloudmesh.database.put_data
+   cloudmesh.database.delete_data
+   cloudmesh.database.post_data
+   ```
+
 Path: /database/{dbname}/collection/{collname}/index/{idx}
 
 * get
 * put
+* delete
+
+   ```
+   cloudmesh.database.index_get
+   cloudmesh.database.index_put
+   cloudmesh.database.index_delete
+   cloudmesh.database.index_post
+   ```
 
 ## References
