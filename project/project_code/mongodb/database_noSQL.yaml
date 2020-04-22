@@ -1,0 +1,573 @@
+openapi: "3.0.2"
+info:
+  version: 4.0.0
+  x-date: 05-12-2019
+  x-status: proposed
+  title: Database
+  description: |-
+
+    The database specification allows to register a database and perform
+    elementary operations to use the database. We distinguish actions
+    related to the registration, the insertion of
+    data and the query of data. This api is developed for NoSQL database operations
+
+  termsOfService: "https://github.com/cloudmesh/cloudmesh-nist/blob/master/LICENSE.txt"
+  contact:
+    name: NIST BDRA Interface Subgroup
+    url: https://cloudmesh-community.github.io/nist/spec/
+  license:
+    name: Apache 2.0
+    url: https://github.com/cloudmesh/cloudmesh-nist/blob/master/LICENSE.txt
+servers:
+  - url: http://localhost:8080/cloudmesh/v3
+
+paths:
+  /status/:
+    get:
+      tags:
+        - "Database Registry"
+      summary: Returns server status
+      description: Status
+      operationId: cloudmesh.database.status
+      responses:
+        '200':
+          description: Status
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+  /database/{dbname}:
+    get:
+      tags:
+        - "Database Registry"
+      summary: Returns all databases
+      description: Returns name of all databases availble in database instance
+      operationId: cloudmesh.database.get
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of databases
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+        - "Database Registry"
+      summary: "Create database"
+      description: "Create a database in a Database instance"
+      operationId: cloudmesh.database.put
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Database successfully created"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+        - "Database Registry"
+      summary: "Delete a database from a database instance"
+      description: ""
+      operationId: cloudmesh.database.delete
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Database successfully deleted"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+  /database/{dbname}/collection/{collname}/data:
+    get:
+      tags:
+      - "Database Collection Data"
+      summary: Query the database collection
+      description: Query the database collection
+      operationId: "cloudmesh.database.data_get"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: collname
+          description: Collection Name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfull query
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+      - "Database Collection Data"
+      summary: "add document to the collection"
+      description: ""
+      operationId: "cloudmesh.database.data_put"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: collname
+          description: "Database collection"
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Record to be uploaded
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Record"
+      responses:
+        '200':
+          description: "successfully uploaded"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    post:
+      tags:
+        - "Database Collection Data"
+      summary: "Database Collection Bulk Data upload"
+      description: "Database Collection Bulk Data upload"
+      operationId: "cloudmesh.database.data_post"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: collname
+          description: "Database collection"
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Record to be uploaded
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/File"
+      responses:
+        '200':
+          description: "successfully uploaded"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+      - "Database Collection Data"
+      summary: "Delete the database objects matching the query"
+      description: ""
+      operationId: "cloudmesh.database.data_delete"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: collname
+          description: Database collection
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: query
+          description: value to be deleted
+          in: query
+          required: false
+          schema:
+            $ref: '#/components/schemas/Query'
+      responses:
+        '200':
+          description: Successfull query
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+  /database/{dbname}/collection/{collname}:
+    get:
+      tags:
+        - "Database Collection"
+      summary: Get the list of the columns in a tables
+      description: ""
+      operationId: "cloudmesh.database.get_coll"
+      parameters:
+        - name: dbname
+          description: "Enter name of the database"
+          in: path
+          required: true
+          schema:
+           type: string
+        - name: collname
+          description: "Enter name of the collection or type ALL"
+          in: path
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully returned the collection"
+          content:
+            application/json:
+              schema:
+                type: string
+                items:
+                  $ref: "#/components/schemas/Table"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+        - "Database Collection"
+      summary: "Create  a collection in a required db"
+      description: ""
+      operationId: "cloudmesh.database.put_coll"
+      parameters:
+        - name: dbname
+          description: "Enter name of the database where collection to be created"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: collname
+          description: "Enter name of the collection to be created along with structure ex. <tablename>(<col1 <datatype> , <col2 <datatype> , ..,...)"
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully collection created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Table"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+        - "Database Collection"
+      summary: Deletes a table from a given database schema
+      description: Deletes a table from a given database schema
+      operationId: "cloudmesh.database.delete_coll"
+      parameters:
+        - name: dbname
+          description: "Enter name of the database from which collection to be deleted"
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: collname
+          description: "Enter name of the collection which to be deleted/ dropped"
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "Collection Deletion successful"
+        '401':
+          description: Not authorized
+        '404':
+          description: Named table not found
+  /database/{dbname}/collection/{collname}/index/{idxnm}:
+    get:
+      tags:
+        - "Database Collection Index"
+      summary: Get database collection index
+      description: Get database collection index
+      operationId: "cloudmesh.database.index_get"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: collname
+          description: Database collection
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: idxnm
+          description: Index name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully created"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    put:
+      tags:
+        - "Database Collection Index"
+      summary: Create database collection index
+      description: Create database collection index
+      operationId: "cloudmesh.database.index_put"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: collname
+          description: Database collection
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: idxnm
+          description: Index name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully created"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    patch:
+      tags:
+        - "Database Collection Index"
+      summary: Update database collection index
+      description: Update database collection index
+      operationId: "cloudmesh.database.index_patch"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: collname
+          description: Database collection
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: idxnm
+          description: Index name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully created"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+    delete:
+      tags:
+        - "Database Collection Index"
+      summary: Drop database collection index
+      description: Drop database collection index
+      operationId: "cloudmesh.database.index_delete"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: collname
+          description: Database collection
+          required: true
+          schema:
+            type: string
+        - in: path
+          name: idxnm
+          description: Index name
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: "successfully deleted"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Named database not found
+components:
+  schemas:
+    Database:
+      type: object
+      description: Defines a database object as an entry
+      properties:
+        name:
+          type: string
+          description: list of the databases
+    Schema:
+      type: object
+      description: Defines a database schema
+      properties:
+        name:
+          type: string
+          description: Name of the database schema
+        description:
+          type: string
+          description: Description of the database schema
+        kind:
+          type: string
+          description: The kind of the definition
+        content:
+           type: string
+           description: The schema associated with the table or collection
+    Record:
+      type: object
+      description: The result of a query
+      properties:
+        col1:
+          type: integer
+          description: The status of the reurn
+        col2:
+          type: string
+          description: The result of the query in json string format
+        col3:
+          type: string
+          description: The result of the query in json string format
+        col4:
+          type: string
+          description: The result of the query in json string format
+        col5:
+          type: string
+          description: The result of the query in json string format
+        col6:
+          type: string
+          description: The result of the query in json string format
+        col7:
+          type: string
+          description: The result of the query in json string format
+    Query:
+      type: object
+      description: The  query
+      properties:
+        col1:
+          type: string
+        val1:
+          type: string
+          description: The query string
+    File:
+      type: object
+      description: The result of a query
+      properties:
+        FileName:
+          type: string
+          description: Name of the file
+        FileType:
+          type: string
+          description: Type of the file ex. csv , json etc
+        FilePath :
+          type: string
+          description: Location of file ex. /download/
+        FileMode:
+          type: string
+          description: File load moe type ex. insert , upsert , merge
+
+    Table:
+      type: object
+      description: The  table
+      properties:
+        status:
+          type: string
+          description: Table
