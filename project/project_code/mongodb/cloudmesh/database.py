@@ -1,8 +1,4 @@
-############################################################################
-# database.py is to create database ,scheme ,table and query in Azure      #
-# Section azuresqldb added in the file                                     #
-############################################################################
-
+# database.py is to create database ,collection, query data in MongoDB
 import os
 import subprocess
 from cloudmesh.common.dotdict import dotdict
@@ -11,71 +7,34 @@ from flask import request, jsonify
 from pymongo import MongoClient
 import json
 
-
 def status():
     d = {"status": "ok"}
     return jsonify(d)
 
+#service_name = 'mongodb'
+#config = Config()
+#credential = dotdict(config[f"cloudmesh.database.{service_name}.credentials"])
 
-############################################################################
-# Read database connection detail from .cloudmesh/cloudmesh.yaml file      #
-# Section azuresqldb added in the file                                     #
-############################################################################
+#server = credential.server
+#database = credential.database
+#username = credential.username
+#password = credential.password
+#driver = credential.driver
+#port = 1433
 
-service_name = 'mongodb'
-config = Config()
-credential = dotdict(config[f"cloudmesh.database.{service_name}.credentials"])
-
-
-'''
-server = SSHTunnelForwarder(
-    MONGO_HOST,
-    ssh_username=MONGO_USER,
-    ssh_password=MONGO_PASS,
-    remote_bind_address=(MONGO_HOST, 27017)
-)
-
-server.start()
-
-client = pymongo.MongoClient(MONGO_HOST, server.local_bind_port) # server.local_bind_port is assigned local port
-db = client[MONGO_DB]
-pprint.pprint(db.collection_names())
-
-server.stop()
-'''
-server = credential.server
-database = credential.database
-username = credential.username
-password = credential.password
-driver = credential.driver
-port = 1433
-
-
-#########################################################################################
-# Helper functions                                                     #
-# get database list, connect , disconnect a database                                  #
-#########################################################################################
 
 def _connect():
     global MONGO_HOST
     client = MongoClient(MONGO_HOST, 27017)
 
-
-#########################################################################################
-# Function for database operations                                                      #
-# get database list, connect , disconnect a database                                    #
-#########################################################################################
-
 def get(dbname):
     dbs = MongoClient(MONGO_HOST, 27017).list_database_names()
     return json.dumps(dbs)
-
 
 def put(dbname):
     client = MongoClient(MONGO_HOST, 27017)
     dbname = str(dbname)
     db = client[dbname]
-
 
 def delete(dbname):
     client = MongoClient(MONGO_HOST, 27017)
@@ -90,9 +49,7 @@ def get_coll(dbname, collname):
     coll_nm = db.list_collection_names()
     return json.dumps(coll_nm)
 
-
 # ****** Function to create a collection in a database , database name is a input parameter for this function ******
-
 
 def put_coll(dbname, collname):
     con = _connect()
@@ -106,7 +63,6 @@ def put_coll(dbname, collname):
 def delete_coll(dbname, collname):
     con = _connect()
 
-
 # ******Function to get data from a database table ******
 
 def data_get(dbname, collname):
@@ -115,8 +71,6 @@ def data_get(dbname, collname):
     fname = collname+ftype
     command = f"mongoexport --host localhost:27017 --db {dbname} --collection {collname}  --out {fname}"
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
-    #for data in process.stdout:
-    #print data
 
 # ******Function to load data into a database collection ******
 
