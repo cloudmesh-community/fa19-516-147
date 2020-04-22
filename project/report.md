@@ -1,13 +1,10 @@
-# Abstract Database Management On Multicloud Environments (with focus on Azure and AWS3)
+# Abstract Database Management On Multicloud Environments
 
 Harsha Upadhyay, [fa19-516-147](https://github.com/cloudmesh-community/fa19-516-147/edit/master/project/report.md)
 
-[Contributors](https://github.com/cloudmesh-community/fa19-516-147/graphs/contributors)
-
-[Insights](https://github.com/cloudmesh-community/fa19-516-147/pulse)
- 
-[Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
-
+* [Contributors](https://github.com/cloudmesh-community/fa19-516-147/graphs/contributors)
+* [Insights](https://github.com/cloudmesh-community/fa19-516-147/pulse)
+* [Project Code](https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code)
 
 ## Objective
 
@@ -317,18 +314,8 @@ Add database sections and introduce aws and azure config detail
 
 #### Update .cloudmesh.yaml on local install
 
- Add connection parameters
+Add connection parameters
     
-## Progress
-
-* Azure account created
-* A database created on Azure SQL Database
-* Docker setup on local
-* Python script to test connection to databse and deploy table
-* AWS account creation
-* Code directory & file structure set up complete
-* Database.py created for get ,set Db and Schema
-* Database.py tested for get ,set Db and Schema
 
 ## References
 
