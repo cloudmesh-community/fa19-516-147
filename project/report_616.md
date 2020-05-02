@@ -13,13 +13,25 @@ Abstract database management on NoSQL environments for the NIST Big Data Referen
 ## Introduction
 
 We will be providing database abstraction management focused on No SQL technology . 
-This will also include addition of new functionality in order to perform databsase operationa more effectively.
+This will also include addition of new functionality in order to perform database operations more effectively.
 
-* Functionality to pull records from database table into a file
-* Introduced functionality (POST) to upload data from file to a database table
-* Create and expand functionality for No SQL database like MongoDB or one other
-* Enhance GET and PUT request to get or insert data based on specific criteria
-* Create docker / container image to deploy and manage
+### NoSQL Database Management Open API Service Features
+
+* Create a named database
+* Delete a named database
+* Get the list of databases available
+* Create a named collection
+* Create capped collection (fixed size) to support high throughput operations
+* Delete a collection from a database
+* Get the list of collections within a database
+* Pull the data from a database collection into a file
+* Upload data into a database collection from a file
+* Insert a single record without file into database collection
+* Update document value in a collection
+* Delete a record or set of records from the database collection based on the condition 
+* Create an Index on a database collection
+* Delete an index from the collection
+* Get the index list created on a database collection
 
 ## Implementation Plan 
 
@@ -98,12 +110,14 @@ This path performs following collection data level operations:
 
 * get
 * put
+* Patch
 * delete
 * post
 
    ```
    cloudmesh.database.get_data
    cloudmesh.database.put_data
+   cloudmesh.database.patch_data
    cloudmesh.database.delete_data
    cloudmesh.database.post_data
    ```
@@ -122,3 +136,7 @@ Path: /database/{dbname}/collection/{collname}/index/{idx}
    ```
 
 ## References
+
+MongoDB Cloud Database Services <https://www.mongodb.com/cloud>
+MongoDB Documentaion <https://docs.mongodb.com/manual/reference/method>
+Open API Specification <https://swagger.io/docs/specification/serialization/>
