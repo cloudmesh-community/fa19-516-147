@@ -1,7 +1,7 @@
 openapi: "3.0.2"
 info:
   version: 4.0.0
-  x-date: 05-12-2019
+  x-date: 05-04-2020
   x-status: proposed
   title: Database
   description: |-
@@ -218,6 +218,43 @@ paths:
           description: Not authorized
         '404':
           description: Named database not found
+    patch:
+      tags:
+        - "Database Collection Data"
+      summary: "Update value in a collection document"
+      description: ""
+      operationId: "cloudmesh.database.data_patch"
+      parameters:
+        - name: dbname
+          description: Name of the database
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: collname
+          description: "Name of the Database collection"
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Record to be updated
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Collection"
+      responses:
+        '200':
+          description: "successfully uploaded"
+          content:
+            application/json:
+              schema:
+                type: string
+        '401':
+          description: Not authorized
+        '404':
+          description: Update not performed
     delete:
       tags:
       - "Database Collection Data"
@@ -281,8 +318,6 @@ paths:
             application/json:
               schema:
                 type: string
-                items:
-                  $ref: "#/components/schemas/Table"
         '401':
           description: Not authorized
         '404':
@@ -312,7 +347,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Table"
+                $ref: "#/components/schemas/Collection"
         '401':
           description: Not authorized
         '404':
@@ -564,10 +599,15 @@ components:
           type: string
           description: File load moe type ex. insert , upsert , merge
 
-    Table:
+    Collection:
       type: object
-      description: The  table
+      description: The  query
       properties:
-        status:
+        CollName:
           type: string
-          description: Table
+        OldValue:
+          type: string
+          description: Document value which to be updated
+        NewValue:
+          type: string
+          description: New value
