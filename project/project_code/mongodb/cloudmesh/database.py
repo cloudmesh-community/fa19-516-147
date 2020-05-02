@@ -55,15 +55,17 @@ def get_coll(dbname, collname):
 def put_coll(dbname, collname):
     con = _connect()
     client = MongoClient(MONGO_HOST, 27017)
-    # coll_nm = db.getCollectionNames()
     db = client[dbname]
     coll_nm = db[collname]
-    #db.createCollection(collname)
+
 
 # ****** Function to delete collection from database *******
 
 def delete_coll(dbname, collname):
-    con = _connect()
+    client = MongoClient(MONGO_HOST, 27017)
+    db = client[dbname]
+    coll_nm = db[collname]
+    coll_nm.drop()
 
 # ******Function to get data from a database table ******
 
