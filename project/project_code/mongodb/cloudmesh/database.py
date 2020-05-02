@@ -22,6 +22,7 @@ def status():
 #driver = credential.driver
 #port = 1433
 
+MONGO_HOST = '127.0.0.1'
 
 def _connect():
     global MONGO_HOST
@@ -57,6 +58,7 @@ def put_coll(dbname, collname):
     # coll_nm = db.getCollectionNames()
     db = client[dbname]
     coll_nm = db[collname]
+    #db.createCollection(collname)
 
 # ****** Function to delete collection from database *******
 
@@ -91,6 +93,17 @@ def data_put(dbname, collname):
     val2 = val1.replace('[', '(')
     val3 = val2.replace(']', ')')
 
+def data_patch(dbname, collname):
+    client = MongoClient(MONGO_HOST, 27017)
+    db = client[dbname]
+    coll = db[collname]
+    data_dict = request.json
+    collnm = data_dict['CollName']
+    val = data_dict['OldValue']
+    nval = data_dict['NewValue']
+    myquery = {collnm: val}
+    newvalues = {"$set": {collnm: nval}}
+    coll.update_one(myquery, newvalues)
 
 def data_delete(dbname, collname):
     client = MongoClient(MONGO_HOST, 27017)
