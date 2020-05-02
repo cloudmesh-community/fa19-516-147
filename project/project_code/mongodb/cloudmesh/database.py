@@ -152,5 +152,5 @@ def data_post(dbname, collname):
     fmode = data_dict['FileMode']
     #command = f"mongoimport {auth} --bind_ip {mongo_host} --dbpath {self.mongo_path} --logpath {self.mongo_log}/mongod.log" \
     #             " --fork".format(**self.data, auth=auth)
-    command = f"mongoimport --host localhost:27017 --db {dbname} --collection {collname} --file /{fpath}/{fname} --mode {fmode} --type {ftype}"
+    command = f"mongoimport --host localhost:27017 --db {dbname} --collection {collname} --file {fpath}/{fname} --mode {fmode} --type {ftype}"
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
