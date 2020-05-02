@@ -295,7 +295,7 @@ paths:
     get:
       tags:
         - "Database Collection"
-      summary: Get the list of the columns in a tables
+      summary: Get the list of the collection in a database
       description: ""
       operationId: "cloudmesh.database.get_coll"
       parameters:
@@ -325,7 +325,7 @@ paths:
     put:
       tags:
         - "Database Collection"
-      summary: "Create  a collection in a required db"
+      summary: "Create  a capped or non-capped collection in a required db"
       description: ""
       operationId: "cloudmesh.database.put_coll"
       parameters:
@@ -336,7 +336,7 @@ paths:
           schema:
             type: string
         - name: collname
-          description: "Enter name of the collection to be created along with structure ex. <tablename>(<col1 <datatype> , <col2 <datatype> , ..,...)"
+          description: 'Enter name of the collection with capped property ex :"CollectionName", {capped : true, size : 2, max : 2}'
           in: path
           required: true
           schema:
@@ -355,8 +355,8 @@ paths:
     delete:
       tags:
         - "Database Collection"
-      summary: Deletes a table from a given database schema
-      description: Deletes a table from a given database schema
+      summary: Deletes a collection from a given database
+      description: Deletes a collection from a database
       operationId: "cloudmesh.database.delete_coll"
       parameters:
         - name: dbname
