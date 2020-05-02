@@ -117,7 +117,7 @@ paths:
     get:
       tags:
       - "Database Collection Data"
-      summary: Query the database collection
+      summary: Pull database collection data into a file
       description: Query the database collection
       operationId: "cloudmesh.database.data_get"
       parameters:
@@ -147,7 +147,7 @@ paths:
     put:
       tags:
       - "Database Collection Data"
-      summary: "add document to the collection"
+      summary: "Add document to a collection"
       description: ""
       operationId: "cloudmesh.database.data_put"
       parameters:
@@ -185,7 +185,7 @@ paths:
       tags:
         - "Database Collection Data"
       summary: "Database Collection Bulk Data upload"
-      description: "Database Collection Bulk Data upload"
+      description: "Database Collection Bulk Data upload , file load"
       operationId: "cloudmesh.database.data_post"
       parameters:
         - name: dbname
@@ -201,7 +201,7 @@ paths:
           schema:
             type: string
       requestBody:
-        description: Record to be uploaded
+        description: 'File detail, ex:"FileMode": "upsert", "FileName": "Books.json","FilePath": "/downloads", "FileType": "json" '
         required: true
         content:
           application/json:
@@ -451,42 +451,6 @@ paths:
           description: Not authorized
         '404':
           description: Named database not found
-    patch:
-      tags:
-        - "Database Collection Index"
-      summary: Update database collection index
-      description: Update database collection index
-      operationId: "cloudmesh.database.index_patch"
-      parameters:
-        - name: dbname
-          description: Name of the database
-          in: path
-          required: true
-          schema:
-            type: string
-        - in: path
-          name: collname
-          description: Database collection
-          required: true
-          schema:
-            type: string
-        - in: path
-          name: idxnm
-          description: Index name
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: "successfully created"
-          content:
-            application/json:
-              schema:
-                type: string
-        '401':
-          description: Not authorized
-        '404':
-          description: Named database not found
     delete:
       tags:
         - "Database Collection Index"
@@ -594,20 +558,21 @@ components:
           description: Type of the file ex. csv , json etc
         FilePath :
           type: string
-          description: Location of file ex. /download/
+          description: Location of file ex. /downloads
         FileMode:
           type: string
           description: File load moe type ex. insert , upsert , merge
 
     Collection:
       type: object
-      description: The  query
+      description: Collection update values
       properties:
         CollName:
           type: string
+          description: Document field name to be updated
         OldValue:
           type: string
-          description: Document value which to be updated
+          description: Document field value to be updated
         NewValue:
           type: string
-          description: New value
+          description: New value of the document field to be updated
