@@ -1,0 +1,7 @@
+flask
+connexion[swagger-ui]
+pymongo
+collections
+argparse
+json
+yaml
