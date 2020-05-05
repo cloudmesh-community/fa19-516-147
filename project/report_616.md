@@ -73,7 +73,7 @@ For Windows or other please follow steps from the link below
 ```buildoutcfg
 sh app_start.sh
 ```
-app_start is a wrapper scripts which calls server.py to start losthost
+app_start is a wrapper scripts which calls server.py to start localhost
 
 To perform operation go to Swagger UI
 
@@ -82,7 +82,7 @@ open http://127.0.0.1:8080/cloudmesh/v3/ui/
 
 ```
 
-## API Setup and Details
+## API Operations and Details
 
 ### Open API .yaml file
 
