@@ -33,7 +33,7 @@ This will also include addition of new functionality in order to perform databas
 * Delete an index from the collection
 * Get the index list created on a database collection
 
-## Implementation Plan 
+## Implementation
 
 Abstract Database Management projects provides ability to perform
 database operations as a service using Open API connexion service and
@@ -44,15 +44,41 @@ template. Three main components of database service are:
 * database_nosql.yaml
 * database_nosql.py
 
-### Step 1: NoSQL MongoDB setup
+### Prerequisites
 
-Create Database instance and a database on MongoDB
+Copy files and scripts from git directory 
+<https://github.com/cloudmesh-community/fa19-516-147/tree/master/project/project_code/mongodb>
+```buildoutcfg
+git clone https://github.com/cloudmesh-community/sp19-516-147.git
+cd mongoapi
+```
+
+Install Python 3.8 
+Python download <https://www.python.org/downloads/>
+
+Run requirement.txt
+```buildoutcfg
+pip install -r requirements.txt
+```
+Install MongoDB 
+
+```buildoutcfg
+sh mongo_setup.sh
+```
+For Windows or other please follow steps from the link below
+ <https://docs.mongodb.com/manual/installation/>
  
-### Step 2: Open API .yaml file
+## API Setup and Details
+
+### Open API .yaml file
 
 Use NIST database.yaml template file from NIST git directory
 
 [NIST database.yaml](https://github.com/cloudmesh/cloudmesh-nist/blob/master/spec/database.yaml)
+
+```buildoutcfg
+database_NoSql.yaml
+```
 
 #### API Specification database_noSQL.yaml
 
@@ -89,6 +115,8 @@ This path perform following database level operations:
    cloudmesh.database.put
    cloudmesh.database.delete
    ```
+Swagger UI 
+![](image/DB_Registry.png)
 
 Path: /database/{dbname}/collection/{collname}
 
@@ -103,6 +131,9 @@ This path is introduced to perform following collection level operations:
     "cloudmesh.database.put_coll" 
     "cloudmesh.database.delete_coll" 
    ```
+   
+Swagger UI
+![](image/DB_Collection.png)
    
 Path: /database/{dbname}/collection/{collname}/data
 
@@ -121,6 +152,8 @@ This path performs following collection data level operations:
    cloudmesh.database.delete_data
    cloudmesh.database.post_data
    ```
+Swagger UI:
+![](image/DB_Collection_Data.png)
 
 Path: /database/{dbname}/collection/{collname}/index/{idx}
 
@@ -132,8 +165,9 @@ Path: /database/{dbname}/collection/{collname}/index/{idx}
    cloudmesh.database.index_get
    cloudmesh.database.index_put
    cloudmesh.database.index_delete
-   cloudmesh.database.index_post
    ```
+Swagger UI:
+![](image/DB_Collection_Index.png)
 
 ## References
 
