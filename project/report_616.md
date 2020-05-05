@@ -68,6 +68,20 @@ sh mongo_setup.sh
 For Windows or other please follow steps from the link below
  <https://docs.mongodb.com/manual/installation/>
  
+### Running the API
+
+```buildoutcfg
+sh app_start.sh
+```
+app_start is a wrapper scripts which calls server.py to start losthost
+
+To perform operation go to Swagger UI
+
+```buildoutcfg
+open http://127.0.0.1:8080/cloudmesh/v3/ui/
+
+```
+
 ## API Setup and Details
 
 ### Open API .yaml file
